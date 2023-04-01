@@ -1,0 +1,84 @@
+body
+{
+    background-color: rgb(25, 25, 25);
+}
+
+
+.signup-box
+{
+    padding: 0px 0px 0px 10px;
+    background-color: gold;
+    height: 375px;
+    width: 275px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-box
+{
+    text-align: left;
+}
+
+input
+{
+    background-color: #252525;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: white;
+    width: 264px;
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+input:focus
+{
+    outline: none;
+    border-color: blueviolet;
+}
+
+.check-box
+{
+    width: 15px;
+    height: 15px;
+}
+
+table
+{
+    margin-bottom: 25px;
+}
+
+.button
+{
+    background-color: navy; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.button:hover
+{
+    background-color: blueviolet;
+}
+
+.signupbutton
+{
+    text-align: center;
+}
+
+#Trade
+{
+    text-align: center;
+}
