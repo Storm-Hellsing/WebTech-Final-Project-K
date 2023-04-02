@@ -56,13 +56,14 @@ table
 
 .button
 {
-    background-color: navy; /* Green */
+    background-color: navy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
     border: none;
     color: white;
     padding: 15px 50px;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
     margin-right: 10px;
@@ -81,4 +82,44 @@ table
 #Trade
 {
     text-align: center;
+}
+
+.message-box
+{
+    background-color: gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 20px 20px;
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    left: 70%;
+    top: 30%;
+    border-radius: 5px;
+    animation: slideRight 10s ease-in-out forwards;
+}
+
+@keyframes slideRight 
+{
+    0% 
+    {
+      transform: translateX(200px);
+    }
+    50% 
+    {
+      transform: translateX(0);
+    }
+    100% 
+    {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+}
+
+#message-box-paragrapgh
+{
+    color: rgba(255, 0, 0, 0.693);
+    font-size: 16px;
 }
