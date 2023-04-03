@@ -56,7 +56,8 @@ table
 
 .button
 {
-    background-color: navy; /* Green */
+    background-color: navy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     border: none;
     color: white;
     padding: 15px 50px;

@@ -2,7 +2,7 @@
     <head>
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="../stylesheets/signUp_Merchant.css"/>
-        <script src="../scripts/signUp_Merchant_Scripts.js"></script>
+        <script src="../scripts/signUp_Merchant_Script.js"></script>
     </head>
 
     <body>
