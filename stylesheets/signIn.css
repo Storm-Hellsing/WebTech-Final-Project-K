@@ -8,7 +8,7 @@ body
 {
     padding: 0px 0px 0px 10px;
     background-color: gold;
-    height: 375px;
+    height: 380px;
     width: 275px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -56,13 +56,16 @@ table
 
 .button
 {
-    background-color: navy; /* Green */
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
     border: none;
-    color: white;
+    color: gold;
     padding: 15px 50px;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
     margin-right: 10px;
@@ -70,7 +73,8 @@ table
 
 .button:hover
 {
-    background-color: blueviolet;
+    background-color: rgb(75, 75, 75);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
 }
 
 .signupbutton
@@ -78,7 +82,42 @@ table
     text-align: center;
 }
 
-#Trade
+#companyname
 {
     text-align: center;
+}
+
+.message-box
+{
+    background-color: gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 20px 20px;
+    width: 250px;
+    height: 100px;
+    position: fixed;
+    left: 75%;
+    top: 0%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    animation: slideTop 10s ease-in-out forwards;
+}
+
+@keyframes slideTop 
+{
+    0% 
+    {
+        transform: translateY(-250px);
+    }
+    50% 
+    {
+        transform: translateY(15%);
+    }
+    100% 
+    {
+        transform: translateY(5%);
+        opacity: 0;
+    }
 }

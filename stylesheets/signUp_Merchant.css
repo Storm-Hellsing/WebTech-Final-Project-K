@@ -56,11 +56,13 @@ table
 
 .button
 {
-    background-color: navy;
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
+    font-weight: bold;
     border: none;
-    color: white;
+    color: gold;
     padding: 15px 50px;
     text-decoration: none;
     display: inline-block;
@@ -71,7 +73,8 @@ table
 
 .button:hover
 {
-    background-color: blueviolet;
+    background-color: rgb(75, 75, 75);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
 }
 
 .signupbutton

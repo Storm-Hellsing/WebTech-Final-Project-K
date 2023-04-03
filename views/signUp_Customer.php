@@ -56,8 +56,8 @@
         ?>
 
         <div class="message-box">
-        Message:
-        <p id="message-box-paragrapgh">
+            Message:
+            <p id="message-box-paragrapgh">
             <?php
 
                 if($_REQUEST['msg'] == 'nullInputs')
@@ -97,7 +97,7 @@
                 }
 
             ?>
-        </p>
+            </p>
         </div>
 
         <?php
