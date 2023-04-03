@@ -2,11 +2,12 @@
     <head>
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="../sytlesheets/signUp_Admin.css">
+        <script src="../scripts/signUp_Admin_Script.js"></script>
     </head>
 
     <body>
         <div class="signup-box">
-            <h2 id="Trade">Goods and Goodies</h2>
+            <h2 id="companyname">Goods and Goodies</h2>
             <h1>Sign Up</h1>
             <div class="form-box">
                 <label for="username">User Name:</label><br>
@@ -42,9 +43,7 @@
                 </table>
             </div>
             <div class="signupbutton">
-                <a href="#" class="button">
-                    Sign Up
-                </a>
+                <button type="submit" name="submit" class="button">Sign Up</button>
             </div>
         </div>
     </body>

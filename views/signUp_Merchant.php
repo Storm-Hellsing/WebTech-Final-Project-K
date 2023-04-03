@@ -2,13 +2,13 @@
     <head>
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="../stylesheets/signUp_Merchant.css"/>
-        <script src="../scripts/signUp_Merchant.js"></script>
+        <script src="../scripts/signUp_Merchant_Scripts.js"></script>
     </head>
 
     <body>
         <form id="signup" method="POST" action="../controllers/signUp_Merchant_Check.php" enctype="">
             <div class="signup-box">
-                <h2 id="Trade">Goods and Goodies</h2>
+                <h2 id="companyname">Goods and Goodies</h2>
                 <h1>Sign Up</h1>
                 <div class="form-box">
                     <label for="businessname">Business Name:</label><br>

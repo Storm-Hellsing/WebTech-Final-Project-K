@@ -1,51 +1,110 @@
 <html>
     <head>
         <title>Sign Up Page</title>
-        <link rel="stylesheet" href="../sytlesheets/signUp_Customer.css">
+        <link rel="stylesheet" href="../stylesheets/signUp_Customer.css">
+        <script src="../scripts/signUp_Customer_Script.js"></script>
     </head>
 
     <body>
-        <div class="signup-box">
-            <h2 id="Trade">Goods and Goodies</h2>
-            <h1>Sign Up</h1>
-            <div class="form-box">
-                <label for="username">User Name:</label><br>
-                <input type="text" name="username" id="username" value=""/>
-                <br>
+        <form method="POST" action="../controllers/signUp_Customer_Check.php" enctype="">
+            <div class="signup-box">
+                <h2 id="companyname">Goods and Goodies</h2>
+                <h1>Sign Up</h1>
+                <div class="form-box">
+                    <label for="username">User Name:</label><br>
+                    <input type="text" name="username" id="username" value=""/>
+                    <br>
+                </div>
+                <div class="form-box">
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" value=""/>
+                    <br>
+                </div>
+                <div class="form-box">
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" id="password" value=""/>
+                    <br>
+                </div>
+                <div class="form-box">
+                    <label for="retypepassword">Retype Password:</label><br>
+                    <input type="password" name="retypepassword" id="retypepassword" value=""/>
+                    <br> <br>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="show_password" id="show_password" class="check-box" onclick="togglePassword()"/>
+                            </th>
+                            <th>
+                                <label for="show_password">Show Password</label>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="signupbutton">
+                    <button type="submit" name="submit" class="button">Sign Up</button>
+                </div>
             </div>
-            <div class="form-box">
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" value=""/>
-                <br>
-            </div>
-            <div class="form-box">
-                <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" value=""/>
-                <span toggle="#password" class="eye"></span>
-                <br>
-            </div>
-            <div class="form-box">
-                <label for="retypepassword">Retype Password:</label><br>
-                <input type="password" name="retypepassword" id="retypepassword" value=""/>
-                <br> <br>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <th>
-                            <input type="checkbox" name="show_password" id="show_password" class="check-box"/>
-                        </th>
-                        <th>
-                            <label for="show_password">Show Password</label>
-                        </th>
-                    </tr>
-                </table>
-            </div>
-            <div class="signupbutton">
-                <a href="#" class="button">
-                    Sign Up
-                </a>
-            </div>
+        </form>
+        
+        <?php
+
+            if(isset($_REQUEST['msg']))
+            {
+
+        ?>
+
+        <div class="message-box">
+        Message:
+        <p id="message-box-paragrapgh">
+            <?php
+
+                if($_REQUEST['msg'] == 'nullInputs')
+                {
+                    echo("Please fillup all the fileds.");
+                }
+                elseif($_REQUEST['msg'] == 'businessnameExsists')
+                {
+                    echo("Businessname Already Again. Please try agian with a new and unique name.");
+                }
+                elseif($_REQUEST['msg'] == 'invalidBusinessLink')
+                {
+                    echo("Invalid Business Link");
+                }
+                elseif($_REQUEST['msg'] == 'invalidEmail')
+                {
+                    echo("Invalid Email Format");
+                }
+                elseif($_REQUEST['msg'] == 'emailExsists')
+                {
+                    echo("Email already exsists. Please try with a new and unique Email.");
+                }
+                elseif($_REQUEST['msg'] == 'invalidPassword')
+                {
+                    echo("1. Passwords should be at least 8 characters long.<br/>
+                        2. Should contain atleast one symbol.<br/>
+                        3. Should contain at least one number.<br/>
+                        4. Password can not contain '|' charcter.");
+                }
+                elseif($_REQUEST['msg'] == 'passwdMismatch')
+                {
+                    echo("Passwords didn't match.");
+                }
+                elseif($_REQUEST['msg'] == 'signUpSuccess')
+                {
+                    echo("Account has been Created.");
+                }
+
+            ?>
+        </p>
         </div>
+
+        <?php
+
+            }
+
+        ?>
+
     </body>
 </html>
