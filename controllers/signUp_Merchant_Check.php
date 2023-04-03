@@ -64,7 +64,7 @@
 
             if($result)
             {
-                header('location: ../views/signUp_Merchant.php?msg=signUpSuccess');
+                header('location: ../views/signIn.php?msg=signUpSuccess');
             }
             else
             {

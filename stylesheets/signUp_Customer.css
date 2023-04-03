@@ -8,7 +8,7 @@ body
 {
     padding: 0px 0px 0px 10px;
     background-color: gold;
-    height: 525px;
+    height: 570px;
     width: 275px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -124,4 +124,13 @@ table
 {
     color: rgba(255, 0, 0, 0.693);
     font-size: 16px;
+}
+
+.links
+{   
+    margin-bottom: 25px;
+    margin-right: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
 }

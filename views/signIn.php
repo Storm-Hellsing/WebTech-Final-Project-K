@@ -6,7 +6,7 @@
 
     <body>
         <form method="POST" action="../controllers/signIn_Check.php" enctype="">
-            <div class="signup-box">
+            <div class="signin-box">
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h1>Sign In</h1>
                 <div class="form-box">
@@ -32,19 +32,43 @@
                         </tr>
                     </table>
                 </div>
-                <div class="signupbutton">
-                    <a href="#" class="button">
-                        Sign Up
-                    </a>
+                <div class="links">
+                    <a href="signUp_Customer.php">Create an account?</a>
+                </div>
+                <div class="siginbutton">
+                    <button type="submit" name="submit" class="button">Sign In</button>
                 </div>
             </div>
         </form>
+
+        <?php
+
+            if(isset($_REQUEST['msg']))
+            {
+
+        ?>
 
         <div class="message-box">
             Message:
             <p id="message-box-paragraph">
 
+                <?php
+
+                    if($_REQUEST['msg'] == 'signUpSuccess')
+                    {
+                        echo("Your account has been created successfully. You can now Sign In.");
+                    }
+
+                ?>
+
             </p>
         </div>
+
+        <?php
+
+            }
+
+        ?>
+
     </body>
 </html>

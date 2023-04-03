@@ -91,9 +91,9 @@
             {
                 echo("Passwords didn't match.");
             }
-            elseif($_REQUEST['msg'] == 'signUpSuccess')
+            elseif($_REQUEST['msg'] == 'signUpfailed')
             {
-                echo("Account has been Created.");
+                echo("Couldn't create an account. Please try again later.");
             }
 
         ?>
