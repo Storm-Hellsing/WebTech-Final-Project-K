@@ -43,10 +43,10 @@
                     </table>
                 </div>
                 <div class="links">
-                    <a href="signUp_Merchant.php">Create a Business Account?</a>
+                    <a href="signUp_Merchant.php" id="signup-link">Create a Business Account?</a>
                 </div>
                 <div class="signupbutton">
-                    <button type="submit" name="submit" class="button">Sign Up</button>
+                    <button type="submit" name="submit" id="button">Sign Up</button>
                 </div>
             </div>
         </form>

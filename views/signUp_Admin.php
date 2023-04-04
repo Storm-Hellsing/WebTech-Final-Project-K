@@ -43,7 +43,7 @@
                     </table>
                 </div>
                 <div class="signupbutton">
-                    <button type="submit" name="submit" class="button">Sign Up</button>
+                    <button type="submit" name="submit" id="button">Sign Up</button>
                 </div>
             </div>
         </form>

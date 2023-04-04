@@ -17,7 +17,6 @@
                 <div class="form-box">
                     <label for="password">Password:</label><br>
                     <input type="password" name="password" id="password" value=""/>
-                    <span toggle="#password" class="eye"></span>
                     <br>
                 </div>
                 <div>
@@ -33,10 +32,13 @@
                     </table>
                 </div>
                 <div class="links">
-                    <a href="signUp_Customer.php">Create an account?</a>
+                    <a href="signUp_Customer.php" id="signup-link">Create an account?</a>
                 </div>
                 <div class="siginbutton">
-                    <button type="submit" name="submit" class="button">Sign In</button>
+                    <button type="submit" name="submit" id="button">Sign In</button>
+                </div>
+                <div class="forgotpasswordbutton">
+                    <button type="submit" name="submit" id="button-forgotpass">Forgot Password?</button>
                 </div>
             </div>
         </form>

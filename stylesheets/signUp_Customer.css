@@ -54,7 +54,7 @@ table
     margin-bottom: 25px;
 }
 
-.button
+#button
 {
     background-color: rgb(25, 25, 25);
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
@@ -71,7 +71,7 @@ table
     margin-right: 10px;
 }
 
-.button:hover
+#button:hover
 {
     background-color: rgb(75, 75, 75);
 }
@@ -130,7 +130,17 @@ table
 {   
     margin-bottom: 25px;
     margin-right: 10px;
-    text-decoration: none;
     text-align: center;
     font-size: 14px;
+}
+
+#signup-link
+{
+    text-decoration: none;
+    color: mediumblue;
+}
+
+#signup-link:hover
+{
+    text-decoration: underline;
 }

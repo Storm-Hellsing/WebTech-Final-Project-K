@@ -53,10 +53,10 @@
                     </table>
                 </div>
                 <div class="links">
-                    <a href="signIn.php">Already have an account?</a>
+                    <a href="signIn.php" id="signup-link">Already have an account?</a>
                 </div>
                 <div class="signupbutton">
-                    <button type="submit" name="submit" class="button">Sign Up</button>
+                    <button type="submit" name="submit" id="button">Sign Up</button>
                 </div>
             </div>
         </form>
