@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Sign Up Page</title>
-        <link rel="stylesheet" href="../stylesheets/signUp_Admin.css">
+        <link rel="stylesheet" href="../stylesheets/signUp_Admin_Stylesheet.css">
         <script src="../scripts/signUp_Admin_Script.js"></script>
     </head>
 

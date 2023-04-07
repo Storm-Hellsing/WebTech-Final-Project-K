@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Sign Up Page</title>
-        <link rel="stylesheet" href="../stylesheets/signUp_Merchant.css"/>
+        <link rel="stylesheet" href="../stylesheets/signUp_Merchant_Stylesheet.css"/>
         <script src="../scripts/signUp_Merchant_Script.js"></script>
     </head>
 
