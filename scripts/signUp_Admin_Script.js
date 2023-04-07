@@ -1,7 +1,7 @@
 function togglePassword() 
 {
-    var passwordInput = document.getElementById("password");
-    var retypepasswordInput = document.getElementById("retypepassword");
+    let passwordInput = document.getElementById("password");
+    let retypepasswordInput = document.getElementById("retypepassword");
 
     if (passwordInput.type === "password" && retypepasswordInput.type === "password") 
     {
