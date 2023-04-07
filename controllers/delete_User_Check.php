@@ -1,27 +1,26 @@
 <?php
 
     session_start();
-    require_once("../models/sql_connection.php");
+    require_once("../models/db_connection.php");
 
-    if(isset($_REQUEST['remove']))
+    if(isset($_REQUEST['delete']))
     {
-        $userID = $_REQUEST['user_id'];
-
+        $userID = $_REQUEST['userid'];
         $sql = "DELETE FROM `user_all` WHERE `user_id` = '{$userID}'";
         $result = sqlWriteQuery($sql);
-        
+
         if($result)
         {
-            header('location: ../views/user_all_List.php?msg=userRemoved');
+            header('location: ../views/user_all_List.php?msg=deletesuccess');
         }
         else
         {
-            header('loaction: ../views/user_all_List.php?msg=opFalied');
+            header('location: ../views/user_all_List.php?msg=deletefailed');   
         }
     }
     else
     {
-        header('loaction: ../views/user_all_List.php');
+        header('location: ../views/delete_User.php');
     }
 
 ?>

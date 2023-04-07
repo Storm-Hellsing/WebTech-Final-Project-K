@@ -1,6 +1,6 @@
 <?php
 
-    require_once("sql_connection.php");
+  require_once("../models/db_connection.php");
 
     function validatePassword($password) 
     {

@@ -1,4 +1,39 @@
 body
 {
     background-color: rgb(25, 25, 25);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-box
+{
+    background-color: gold;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 5px;
+    height: 105px;
+    position: sticky;
+}
+
+.menu
+{
+    margin-right: 50px;
+    background-color: rgb(25, 25, 25);
+    color: gold;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu:hover
+{
+    background-color: rgb(75, 75, 75);
+}
+
+#user-welcome
+{
+    position: fixed;
+    left: 80%;
+    top: 25px;
 }

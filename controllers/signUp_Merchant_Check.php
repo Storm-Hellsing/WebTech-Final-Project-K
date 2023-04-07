@@ -1,7 +1,7 @@
 <?php
 
     require_once("../models/validations.php");
-    require_once("../models/sql_connection.php");
+    require_once("../models/db_connection.php");
     session_start();
 
     if(isset($_REQUEST['submit']))

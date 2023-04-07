@@ -1,17 +1,17 @@
 <?php
 
-    require_once("../models/sql_connection.php");
+    require_once("../models/db_connection.php");
 
 ?>
 
 <html>
     <head>
-        <title>View User</title>
+        <title>User List</title>
     </head>
         
     <body>
         <div class="main-block">
-            <h1 align="center">Users</h1>
+            <h1 align="center">User List</h1>
             <a href="ViewUsers_Admin.php" target="_blank">Admin's List</a>
             <a href="ViewUsers_Customer.php" target="_blank">Customer's List</a>
             <a href="ViewUsers_Merchant.php?" target="_blank">Merchant's List</a>
@@ -21,7 +21,7 @@
             <br/> <br/>
             <?php
 
-                $sql = "SELECT * FROM `user_all`";
+                $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
                 $result = sqlReadQuery($sql);
 
                 if($result > 0)
@@ -69,11 +69,10 @@
                         <td><?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
                         <td><?php echo $userData['joining_date']; ?></td>
                         <td><?php echo $userData['joining_time']; ?></td>
-                        <form method="POST" action="../controllers/delete_User_Check.php" enctype="">
-                        <input type="hidden" name="user_id" value="<?php echo $userData['user_id']; ?>"/>
-                        <td><button type="submit" name="remove" id="remove">Remove</button></td>
+                        <form method="GET" action="delete_User.php" enctype="">
+                            <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
+                            <td><button type="submit" name="delete" id="delete">Delete</button></td>
                         </form>
-                        <td><Button>Update</Button></td>
                     </tr>
                     <?php 
                             $count++; 
@@ -97,11 +96,11 @@
 
             if(isset($_REQUEST['msg']))
             {
-                if($_REQUEST['msg'] == 'userRemoved')
+                if($_REQUEST['msg'] == 'deletesuccess')
                 {
-                    echo("<b>User has been removed</b>");
+                    echo("The user been deleted.");
                 }
-                elseif($_REQUEST['msg'] == 'opFalied')
+                elseif($_REQUEST['msg'] == 'deletefailed')
                 {
                     echo("<b>Could Not delete user.</b>");
                 }
