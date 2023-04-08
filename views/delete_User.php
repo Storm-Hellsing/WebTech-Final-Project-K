@@ -3,9 +3,9 @@
     session_start();
     require_once("../models/db_connection.php");
 
-    if(isset($_COOKIE['userLoggedIn']) && isset($_REQUEST['delete']))
+    if(isset($_COOKIE['userLoggedIn']))
     {
-        $userID = $_REQUEST['userid'];
+        $userID = $_COOKIE['userLoggedIn'];
 
         $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}'";
         $result = sqlReadQuery($sql);

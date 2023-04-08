@@ -31,7 +31,6 @@
         {
 
             $userData = mysqli_fetch_assoc($result);
-            $_SESSION['username'] = $userData['user_name'];
 
             if($_REQUEST['keep_me_signed_in'] == "on")
             {

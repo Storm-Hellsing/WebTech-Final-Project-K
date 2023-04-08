@@ -6,22 +6,18 @@
 
 <html>
     <head>
-        <title>User List</title>
+        <title>Merchant List</title>
     </head>
         
     <body>
         <div class="main-block">
-            <h1 align="center">User List</h1>
-            <a href="user_Admin_List.php" target="_blank">Admin's List</a>
-            <a href="user_Customer_List.php" target="_blank">Customer's List</a>
-            <a href="user_Merchant_List.php?" target="_blank">Merchant's List</a>
-            <br/> <br/>
+            <h1 align="center">Merchant List</h1>
             <label for="search">Search User: </label>
             <input type="text" name="search" id="search" value=""/> 
             <br/> <br/>
             <?php
 
-                $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
+                $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Merchant' ORDER BY user_name ASC";
                 $result = sqlReadQuery($sql);
 
                 if($result > 0)
