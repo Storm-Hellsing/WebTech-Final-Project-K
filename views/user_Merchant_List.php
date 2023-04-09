@@ -12,9 +12,11 @@
     <body>
         <div class="main-block">
             <h1 align="center">Merchant List</h1>
-            <label for="search">Search User: </label>
-            <input type="text" name="search" id="search" value=""/> 
-            <br/> <br/>
+            <form method="GET" action="../controllers/user_Merchant_List_Search_Check.php" target="_blank" enctype="">
+            <label for="searchresult">Search User: </label>
+            <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile" value=""/>
+            <input type="submit" name="submit" id="submit" value="Search"/>  
+            </form>
             <?php
 
                 $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Merchant' ORDER BY user_name ASC";
@@ -43,7 +45,9 @@
                 <?php
                     
                     $sql = "SELECT `user_id`, `user_type`, `user_name`, `user_email`, `user_mobile`, `user_businessname`, `user_businesslink`, `joining_date`, `joining_time` 
-                            FROM `user_all`";
+                            FROM `user_all`
+                            WHERE `user_type` = 'Merchant'
+                            ORDER BY user_name ASC";
                     $result = getTableData($sql);
 
                     if($result)
@@ -68,6 +72,10 @@
                         <form method="GET" action="delete_User.php" enctype="">
                             <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
                             <td><button type="submit" name="delete" id="delete">Delete</button></td>
+                        </form>
+                        <form method="GET" action="edit_User_Password.php" enctype="">
+                            <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
+                            <td><button type="submit" name="edit" id="edit">Change Password</button></td>
                         </form>
                     </tr>
                     <?php 

@@ -1,25 +1,29 @@
 <?php
 
     require_once("../models/db_connection.php");
+    
+    if(isset($_REQUEST['submit']))
+    {
+        $searchResult = $_REQUEST['searchresult'];
 
 ?>
 
 <html>
     <head>
-        <title>Customer List</title>
+        <title>Search in User List</title>
     </head>
         
     <body>
         <div class="main-block">
-            <h1 align="center">Customer List</h1>
-            <form method="GET" action="../controllers/user_Customer_List_Search_Check.php" target="_blank" enctype="">
+            <h1 align="center">Search Result</h1>
+            <form method="GET" action="../controllers/user_all_List_Search_Check.php" enctype="">
             <label for="searchresult">Search User: </label>
             <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile" value=""/>
             <input type="submit" name="submit" id="submit" value="Search"/>  
             </form>
             <?php
 
-                $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Customer' ORDER BY user_name ASC";
+                $sql = "SELECT * FROM `user_all` WHERE `user_name` LIKE '%{$searchResult}%' OR `user_email` LIKE '%{$searchResult}%' OR `user_mobile` LIKE '%{$searchResult}' ORDER BY user_name ASC";
                 $result = sqlReadQuery($sql);
 
                 if($result > 0)
@@ -46,7 +50,8 @@
                     
                     $sql = "SELECT `user_id`, `user_type`, `user_name`, `user_email`, `user_mobile`, `user_businessname`, `user_businesslink`, `joining_date`, `joining_time` 
                             FROM `user_all`
-                            WHERE `user_type` = 'Customer'";
+                            WHERE `user_name` LIKE '%{$searchResult}%' OR `user_email` LIKE '%{$searchResult}%' OR `user_mobile` LIKE '%{$searchResult}' 
+                            ORDER BY user_name ASC";
                     $result = getTableData($sql);
 
                     if($result)
@@ -112,3 +117,13 @@
         ?>
     </body>
 </html>
+
+<?php
+
+    }
+    else
+    {
+        header('location: ../views/user_all_List.php');
+    }
+
+?>

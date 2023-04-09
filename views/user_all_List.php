@@ -2,6 +2,9 @@
 
     require_once("../models/db_connection.php");
 
+    if(isset($_COOKIE['userLoggedIn']))
+    {
+
 ?>
 
 <html>
@@ -16,9 +19,11 @@
             <a href="user_Customer_List.php" target="_blank">Customer's List</a>
             <a href="user_Merchant_List.php?" target="_blank">Merchant's List</a>
             <br/> <br/>
-            <label for="search">Search User: </label>
-            <input type="text" name="search" id="search" value=""/> 
-            <br/> <br/>
+            <form method="GET" action="../controllers/user_all_List_Search_Check.php" target="_blank" enctype="">
+            <label for="searchresult">Search User: </label>
+            <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile" value=""/>
+            <input type="submit" name="submit" id="submit" value="Search"/>  
+            </form>
             <?php
 
                 $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
@@ -73,6 +78,10 @@
                             <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
                             <td><button type="submit" name="delete" id="delete">Delete</button></td>
                         </form>
+                        <form method="GET" action="edit_User_Password.php" enctype="">
+                            <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
+                            <td><button type="submit" name="edit" id="edit">Change Password</button></td>
+                        </form>
                     </tr>
                     <?php 
                             $count++; 
@@ -109,3 +118,13 @@
         ?>
     </body>
 </html>
+
+<?php
+
+    }
+    else
+    {
+        header('location: ../views/signIn.php');
+    }
+
+?>
