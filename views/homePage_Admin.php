@@ -28,6 +28,7 @@
         <div class="main-box">
             <h1>Goods and Goodies</h1> <br/>
             <h3 id="user-welcome">Welcome, <?php echo($userData['user_name']); ?></h3>
+            <a href="operations.php" target="_blank" class="menu">Operations</a>
             <a href="" target="_blank" class="menu">My Orders</a>
             <a href="" target="_blank" class="menu">My Cart</a>
             <a href="user_all_List.php" target="_blank" class="menu">View Users</a>
