@@ -24,51 +24,97 @@
         $login_Merchant_found = sqlReadQuery($login_Merchant);
 
         #For Extracting every data of user
-        $sql = "SELECT * FROM `user_all`";
-        $result = getTableData($sql);
+        $fetchData_Admin = getTableData($login_Admin);
+        $fetchData_Customer = getTableData($login_Customer);
+        $fetchData_Merchant = getTableData($login_Merchant);
 
-        if($result)
+        if($userEmail == "" && $userPassword == "")
         {
+            header('location: ../views/signIn.php?msg=nullInputs');
+        } 
+        elseif($login_Admin_found === false || $login_Customer_found  === false || $login_Merchant_found  === false)
+        {
+            header('location: ../views/signIn.php?msg=userNotfound');
 
-            $userData = mysqli_fetch_assoc($result);
+            setcookie('userLoggedIn', $userData['user_id'], time()  - 1, '/');
+        }
+        elseif($login_Admin_found)
+        {
+            #For Extracting every data of user
+            $fetchData_Admin = getTableData($login_Admin);
 
-            if($_REQUEST['keep_me_signed_in'] == "on")
+            if($fetchData_Admin)
             {
-                setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
+
+                $userData = mysqli_fetch_assoc($fetchData_Admin);
+
+                if($_REQUEST['keep_me_signed_in'] == "on")
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
+                }
+                else
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
+                }
+
+                header('location: ../views/homePage_Admin.php');
             }
             else
             {
-                setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
+                header('location: ../views/signIn.php?msg=userDoesNotExsist');
             }
+        }
+        elseif($login_Customer_found)
+        {
+            #For Extracting every data of user
+            $fetchData_Customer = getTableData($login_Customer);
 
-            if($userEmail == "" && $userPassword == "")
+            if($fetchData_Customer)
             {
-                header('location: ../views/signIn.php?msg=nullInputs');
-            } 
-            elseif($login_Admin_found === false || $login_Customer_found  === false || $login_Merchant_found  === false)
-            {
-                header('location: ../views/signIn.php?msg=userNotfound');
+                $userData = mysqli_fetch_assoc($fetchData_Customer);
 
-                setcookie('userLoggedIn', $userData['user_id'], time()  - 1, '/');
-            }
-            elseif($login_Admin_found)
-            {
-                header('location: ../views/homePage_Admin.php');
-            }
-            elseif($login_Customer_found)
-            {
+                if($_REQUEST['keep_me_signed_in'] == "on")
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
+                }
+                else
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
+                }
+
                 header('location: ../views/homePage_Customer.php');
             }
-            elseif($login_Merchant_found)
+            else
             {
+                header('location: ../views/signIn.php?msg=userDoesNotExsist');
+            }
+        }
+        elseif($login_Merchant_found)
+        {
+            #For Extracting every data of user
+            $fetchData_Merchant = getTableData($login_Merchant);
+
+            if($fetchData_Merchant)
+            {
+                $userData = mysqli_fetch_assoc($fetchData_Merchant);
+
+                if($_REQUEST['keep_me_signed_in'] == "on")
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
+                }
+                else
+                {
+                    setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
+                }
+
                 header('location: ../views/homePage_Merchant.php');
             }
-
+            else
+            {
+                header('location: ../views/signIn.php?msg=userDoesNotExsist');
+            }
         }
-        else
-        {
-            header('location: ../views/signIn.php?msg=userDoesNotExsist');
-        }
+        
     }
 
 ?>
