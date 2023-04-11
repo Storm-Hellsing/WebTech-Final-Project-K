@@ -1,7 +1,7 @@
 <?php
 
     require_once("../models/validations.php");
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
     session_start();
 
     if(isset($_REQUEST['submit']))
@@ -38,19 +38,9 @@
         }
         else
         {
-            $adminID = setAdminID();
-            $userType = "Admin";
+            $account_created = insert_operation_Admin($userName, $userEmail, $userPassword);
 
-            date_default_timezone_set('Asia/Dhaka');
-            $date = date("Y-m-d");
-            $time = date("H:i:s");
-
-            #SQLQuerry
-            $sql = "INSERT INTO `user_all`(`user_id`, `user_type`, `user_name`, `user_email`, `user_password`, `joining_date`, `joining_time`) 
-                    VALUES ('{$adminID}','{$userType}','{$userName}','{$userEmail}','{$userPassword}','{$date}','{$time}')";
-            $result = sqlWriteQuery($sql);
-
-            if($result)
+            if($account_created)
             {
                 header('location: ../views/signIn.php?msg=signUpSuccess');
             }

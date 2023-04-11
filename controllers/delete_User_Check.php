@@ -6,10 +6,10 @@
     if(isset($_REQUEST['delete']))
     {
         $userID = $_REQUEST['userid'];
-        $sql = "DELETE FROM `user_all` WHERE `user_id` = '{$userID}'";
-        $result = sqlWriteQuery($sql);
 
-        if($result)
+        $deleted_user = delete_operation_User($userID);
+
+        if($deleted_user)
         {
             header('location: ../views/user_all_List.php?msg=deletesuccess');
         }

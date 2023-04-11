@@ -68,10 +68,6 @@
                     {
                         echo("The email or the password might be wrong.");
                     }
-                    elseif($_REQUEST['msg'] == 'userDoesNotExsist')
-                    {
-                        echo("User Does not Exsist.");
-                    }
 
                 ?>
 
