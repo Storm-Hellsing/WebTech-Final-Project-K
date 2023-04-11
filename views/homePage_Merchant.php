@@ -7,15 +7,8 @@
     {
         $userID =  $_COOKIE['userLoggedIn'];
 
-        $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}'";
-        $result = sqlReadQuery($sql);
-
-        if($result == 1)
-        {   
-            $result = getTableData($sql);
-            $userData = mysqli_fetch_assoc($result);
+        $userData = fetch_Data_ByID($userID);
         
-
 ?>
 
 <html>
@@ -40,11 +33,6 @@
 </html>
 
 <?php
-        }
-        else
-        {
-            header('location: ../views/signIn.php?msg=userDoesNotExsist');
-        }
 
     }
     else

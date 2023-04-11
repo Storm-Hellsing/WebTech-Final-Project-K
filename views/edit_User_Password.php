@@ -1,20 +1,12 @@
 <?php
 
     session_start();
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
 
     if(isset($_COOKIE['userLoggedIn']))
     {
-        $userID = $_COOKIE['userLoggedIn'];
-
-        $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}'";
-        $result = sqlReadQuery($sql);
-
-        if($result == 1)
-        {
-
-            $result = getTableData($sql);
-            $UserData = mysqli_fetch_assoc($result)
+        $userID = $_REQUEST['userid'];
+        $userData = fetch_Data_ByID($userID);
 ?>
 
 <html>
@@ -26,7 +18,7 @@
 
     <body>
         <form method="POST" action="../controllers/edit_User_Password_Check.php" enctype="">
-            <input type="hidden" name="userid" id="userid" value="<?php echo($userID); ?>">
+            <input type="hidden" name="userid" id="userid" value="<?php echo($userData['user_id']); ?>">
             <div class="main-box">
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h2>Force Change Password</h2>
@@ -110,11 +102,6 @@
 
 <?php
     
-        }
-        else
-        {
-            echo("<h3 align='center'>User Doesn't Exsist</h3>");
-        }
     }
     else
     {

@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
 
     if(isset($_REQUEST['delete']))
     {

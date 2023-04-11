@@ -18,7 +18,7 @@
         } 
         elseif($found_Admin)
         {
-            $userData = fetch_Data($userEmail, $userPassword);
+            $userData = fetch_Data_Specific($userEmail, $userPassword);
 
             if($_REQUEST['keep_me_signed_in'] == "on")
             {
@@ -34,7 +34,7 @@
         }
         elseif($found_Cutomer)
         {
-            $userData = fetch_Data($userEmail, $userPassword);
+            $userData = fetch_Data_Specific($userEmail, $userPassword);
 
             if($_REQUEST['keep_me_signed_in'] == "on")
             {
@@ -49,7 +49,7 @@
         }
         elseif($found_Merchant)
         {
-            $userData = fetch_Data($userEmail, $userPassword);
+            $userData = fetch_Data_Specific($userEmail, $userPassword);
 
             if($_REQUEST['keep_me_signed_in'] == "on")
             {

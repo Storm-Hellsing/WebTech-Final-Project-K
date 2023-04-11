@@ -1,31 +1,35 @@
 <?php
 
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
+
+    if(isset($_COOKIE['userLoggedIn']))
+    {
 
 ?>
 
 <html>
     <head>
-        <title>Merchant List</title>
+        <title>Admin List</title>
     </head>
         
     <body>
         <div class="main-block">
-            <h1 align="center">Merchant List</h1>
-            <form method="GET" action="../controllers/user_Merchant_List_Search_Check.php" target="_blank" enctype="">
+            <h1 align="center">Admin List</h1>
+            <form method="GET" action="../controllers/user_Admin_List_Search_Check.php" target="_blank" enctype="">
             <label for="searchresult">Search User: </label>
             <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile" value=""/>
             <input type="submit" name="submit" id="submit" value="Search"/>  
             </form>
+
             <?php
 
-                $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Merchant' ORDER BY user_name ASC";
-                $result = sqlReadQuery($sql);
+                $found = find_user_all();
 
-                if($result > 0)
+                if($found > 0)
                 {
 
             ?>
+
             <table align="center" border="1" width="1500px">
             <tr>
                 <th width="25px">Serial No:</th>
@@ -44,22 +48,15 @@
                 
                 <?php
                     
-                    $sql = "SELECT `user_id`, `user_type`, `user_name`, `user_email`, `user_mobile`, `user_businessname`, `user_businesslink`, `joining_date`, `joining_time` 
-                            FROM `user_all`
-                            WHERE `user_type` = 'Merchant'
-                            ORDER BY user_name ASC";
-                    $result = getTableData($sql);
-
-                    if($result)
-                    {
-                        $count = 1;
+                    $count = 1;
+                    $fetched_Data = fetch_Data_Merchant();
                     
-                        while($userData = mysqli_fetch_assoc($result))
-                        {
+                    while($userData = mysqli_fetch_assoc($fetched_Data))
+                    {
 
                     ?>
                     <tr align="center">
-                        <td><?php echo $count ?></td>
+                        <td><?php echo $count; ?></td>
                         <td><?php echo $userData['user_id']; ?></td>
                         <td><?php echo $userData['user_type']; ?></td>
                         <td><?php echo $userData['user_name']; ?></td>
@@ -78,11 +75,13 @@
                             <td><button type="submit" name="edit" id="edit">Change Password</button></td>
                         </form>
                     </tr>
+
                     <?php 
                             $count++; 
                         }
-                    }
+                    
                     ?>
+
             </table>
 
             <?php 
@@ -96,20 +95,15 @@
 
             </br> </br>
         </div>
-        <?php
-
-            if(isset($_REQUEST['msg']))
-            {
-                if($_REQUEST['msg'] == 'deletesuccess')
-                {
-                    echo("The user been deleted.");
-                }
-                elseif($_REQUEST['msg'] == 'deletefailed')
-                {
-                    echo("<b>Could Not delete user.</b>");
-                }
-            }
-
-        ?>
     </body>
 </html>
+
+<?php
+
+    }
+    else
+    {
+        header('location: ../views/signIn.php');
+    }
+
+?>

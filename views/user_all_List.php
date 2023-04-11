@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
 
     if(isset($_COOKIE['userLoggedIn']))
     {
@@ -26,10 +26,9 @@
             </form>
             <?php
 
-                $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
-                $result = sqlReadQuery($sql);
+                $found = find_user_all();
 
-                if($result > 0)
+                if($found > 0)
                 {
 
             ?>
@@ -51,43 +50,40 @@
                 
                 <?php
                     
-                    $sql = "SELECT `user_id`, `user_type`, `user_name`, `user_email`, `user_mobile`, `user_businessname`, `user_businesslink`, `joining_date`, `joining_time` 
-                            FROM `user_all`";
-                    $result = getTableData($sql);
-
-                    if($result)
-                    {
-                        $count = 1;
+                    $count = 1;
+                    $fetched_Data = fetch_Data_General();
                     
-                        while($userData = mysqli_fetch_assoc($result))
-                        {
+                    while($userData = mysqli_fetch_assoc($fetched_Data))
+                    {
 
-                    ?>
-                    <tr align="center">
-                        <td><?php echo $count ?></td>
-                        <td><?php echo $userData['user_id']; ?></td>
-                        <td><?php echo $userData['user_type']; ?></td>
-                        <td><?php echo $userData['user_name']; ?></td>
-                        <td><?php echo $userData['user_email']; ?></td>
-                        <td><?php echo isset($userData['user_mobile']) ? $userData['user_mobile'] : ''; ?></td>
-                        <td><?php echo isset($userData['user_businessname']) ? $userData['user_businessname'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
-                        <td><?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
-                        <td><?php echo $userData['joining_date']; ?></td>
-                        <td><?php echo $userData['joining_time']; ?></td>
-                        <form method="GET" action="delete_User.php" enctype="">
-                            <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
-                            <td><button type="submit" name="delete" id="delete">Delete</button></td>
-                        </form>
-                        <form method="GET" action="edit_User_Password.php" enctype="">
-                            <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
-                            <td><button type="submit" name="edit" id="edit">Change Password</button></td>
-                        </form>
-                    </tr>
-                    <?php 
-                            $count++; 
-                        }
+                ?>
+                <tr align="center">
+                    <td><?php echo $count; ?></td>
+                    <td><?php echo $userData['user_id']; ?></td>
+                    <td><?php echo $userData['user_type']; ?></td>
+                    <td><?php echo $userData['user_name']; ?></td>
+                    <td><?php echo $userData['user_email']; ?></td>
+                    <td><?php echo isset($userData['user_mobile']) ? $userData['user_mobile'] : ''; ?></td>
+                    <td><?php echo isset($userData['user_businessname']) ? $userData['user_businessname'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
+                    <td><?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
+                    <td><?php echo $userData['joining_date']; ?></td>
+                    <td><?php echo $userData['joining_time']; ?></td>
+                    <form method="GET" action="delete_User.php" enctype="">
+                        <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
+                        <td><button type="submit" name="delete" id="delete">Delete</button></td>
+                    </form>
+                    <form method="GET" action="edit_User_Password.php" enctype="">
+                        <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
+                        <td><button type="submit" name="edit" id="edit">Change Password</button></td>
+                    </form>
+                </tr>
+                <?php 
+
+                    $count++;
+
                     }
-                    ?>
+
+                ?>
             </table>
 
             <?php 
@@ -97,6 +93,7 @@
                 {
                     echo("<b>The List is empty.</b>");
                 }
+                
             ?>
 
             </br> </br>
@@ -112,6 +109,14 @@
                 elseif($_REQUEST['msg'] == 'deletefailed')
                 {
                     echo("<b>Could Not delete user.</b>");
+                }
+                elseif($_REQUEST['msg'] == 'editSuccess')
+                {
+                    echo("<b>Updated User Password.</b>");
+                }
+                elseif($_REQUEST['msg'] == 'editfailed')
+                {
+                    echo("<b>Could Not update user information.</b>");
                 }
             }
 

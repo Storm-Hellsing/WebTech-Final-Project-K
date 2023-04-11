@@ -1,28 +1,27 @@
 <?php
 
     require_once("../models/validations.php");
-    require_once("../models/db_connection.php");
+    require_once("../models/user_all_model.php");
     session_start();
 
     if(isset($_REQUEST['edit']))
     {
         $userID = $_REQUEST['userid'];
         $currentPassword = $_REQUEST['currentpassword'];
-        $NewPassword = $_REQUEST['password'];
+        $newPassword = $_REQUEST['password'];
         $retypePassword = $_REQUEST['retypepassword'];
 
         #validations
-        $validPassword = validatePassword($NewPassword);
+        $validPassword = validatePassword($newPassword);
 
         #sql Query
-        $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}' AND `user_password` = '{$currentPassword}'";
-        $result = sqlReadQuery($sql);
+        $found_Current_Password = find_Current_Password($userID, $currentPassword);
 
-        if($currentPassword == "" && $NewPassword == "" && $retypePassword == "")
+        if($currentPassword == "" && $newPassword == "" && $retypePassword == "")
         {
             header('location: ../views/edit_User_Password.php?msg=nullInputs');
         }
-        elseif($result === false) 
+        elseif($found_Current_Password === false) 
         {
             header('location: ../views/edit_User_Password.php?msg=wrongcurrentPassword');
         }
@@ -30,25 +29,22 @@
         {
             header('location: ../views/edit_User_Password.php?msg=invalidPassword');
         }
-        elseif($NewPassword != $retypePassword)
+        elseif($newPassword != $retypePassword)
         {
             header('location: ../views/edit_User_Password.php?msg=passwdMismatch');
         }
         else
         {
             #SQLQuerry
-            $sql = "UPDATE `user_all` 
-                    SET `user_password`='{$NewPassword}' 
-                    WHERE `user_id` = '{$userID}'";
-            $result = sqlWriteQuery($sql);
+            $updated = edit_opertation_Password($newPassword, $userID);
 
-            if($result)
+            if($updated)
             {
-                header('location: ../views/user_Admin_List.php?msg=editSuccess');
+                header('location: ../views/user_all_List.php?msg=editSuccess');
             }
             else
             {
-                header('location: ../views/user_Admin_List.php?msg=editfailed');
+                header('location: ../views/user_all_List.php?msg=editfailed');
             }
         }
 

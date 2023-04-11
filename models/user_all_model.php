@@ -40,6 +40,30 @@
 
     }
 
+    function find_user_all()
+    {
+        #For Finding all in general
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
+        $connected = setConnection();
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_num_rows($result);
+    }
+
+    function find_Current_Password($userID, $currentPassword)
+    {
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}' AND `user_password` = '{$currentPassword}'";
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_num_rows($result);
+    }
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+
     #Fetch Data Operation
     function fetch_Data_Specific($userEmail, $userPassword)
     {
@@ -57,10 +81,39 @@
     {
         #For getting user data
         $connected = setConnection();
-        $sql = "SELECT * FROM `user_all`";
-        $result = mysqli_query($connected, $sql);
+        $sql = "SELECT * FROM `user_all` ORDER BY user_name ASC";
+        
+        return mysqli_query($connected, $sql);
 
-        return mysqli_fetch_assoc($result);
+    }
+
+    function fetch_Data_Admin()
+    {
+        #For getting user data
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Admin' ORDER BY user_name ASC";
+        
+        return mysqli_query($connected, $sql);
+
+    }
+
+    function fetch_Data_Customer()
+    {
+        #For getting user data
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Customer' ORDER BY user_name ASC";
+        
+        return mysqli_query($connected, $sql);
+
+    }
+
+    function fetch_Data_Merchant()
+    {
+        #For getting user data
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_type` = 'Merchant' ORDER BY user_name ASC";
+        
+        return mysqli_query($connected, $sql);
 
     }
 
@@ -74,6 +127,10 @@
         return mysqli_fetch_assoc($result);
 
     }
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
 
     #Insert Operations
     function insert_operation_Admin($userName, $userEmail, $userPassword)
@@ -124,10 +181,29 @@
 
     }
 
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+
     #Delete Operations
     function delete_operation_User($userID)
     {
+        $connected = setConnection();
         $sql = "DELETE FROM `user_all` WHERE `user_id` = '{$userID}'";
+        return mysqli_query($connected, $sql);
+    }
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+
+    #Edit Operations
+    function edit_opertation_Password($newPassword, $userID)
+    {
+        $connected = setConnection();
+        $sql = "UPDATE `user_all` 
+                SET `user_password`='{$newPassword}' 
+                WHERE `user_id` = '{$userID}'";
         return mysqli_query($connected, $sql);
     }
 
