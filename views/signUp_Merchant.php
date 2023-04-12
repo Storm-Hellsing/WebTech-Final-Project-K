@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>Sign Up Page</title>
-        <link rel="stylesheet" href="../stylesheets/signUp_Merchant_Stylesheet.css"/>
-        <script src="../scripts/signUp_Merchant_Script.js"></script>
+        <link rel="stylesheet" href="../assets/stylesheets/signUp_Merchant_Stylesheet.css"/>
+        <script src="../assets/scripts/signUp_Merchant_Script.js"></script>
     </head>
 
     <body>

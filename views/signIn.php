@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Sign In Page</title>
-        <link rel="stylesheet" href="../stylesheets/signIn_Stylesheet.css">
+        <link rel="stylesheet" href="../assets/stylesheets/signIn_Stylesheet.css">
     </head>
 
     <body>

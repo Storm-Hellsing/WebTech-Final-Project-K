@@ -13,7 +13,7 @@
 <html>
     <head>
         <title>Home Admin</title>
-        <link rel="stylesheet" href="../stylesheets/homePage_Admin.css">
+        <link rel="stylesheet" href="../assets/stylesheets/homePage_Admin.css">
     </head>
 
     <body>

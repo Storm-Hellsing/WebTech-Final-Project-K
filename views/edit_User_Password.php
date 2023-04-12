@@ -12,8 +12,8 @@
 <html>
     <head>
         <title>Edit Admin</title>
-        <link rel="stylesheet" href="../stylesheets/edit_User_Password_Stylesheet.css">
-        <script src="../scripts/edit_User_Password_Script.js"></script>
+        <link rel="stylesheet" href="../assets/stylesheets/edit_User_Password_Stylesheet.css">
+        <script src="../assets/scripts/edit_User_Password_Script.js"></script>
     </head>
 
     <body>
