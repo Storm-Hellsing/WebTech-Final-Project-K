@@ -87,42 +87,47 @@ table
     text-align: center;
 }
 
-.message-box
+#message-box.show
 {
     background-color: gold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 25px;
-    padding: 20px 20px;
+    padding: 10px 10px;
     width: 250px;
     height: 250px;
     position: fixed;
     left: 70%;
     top: 30%;
     border-radius: 5px;
-    animation: slideRight 10s ease-in-out forwards;
+    animation: slideTop 5s ease-in-out forwards;
 }
 
-@keyframes slideRight 
+@keyframes slideTop 
 {
     0% 
     {
-      transform: translateX(200px);
+      transform: translateY(-500px);
     }
     50% 
     {
-      transform: translateX(0);
+      transform: translateY(25px);
     }
     100% 
     {
-      transform: translateX(200px);
-      opacity: 0;
+      transform: translateY(0px);
     }
 }
 
-#message-box-paragrapgh
+#message-text
 {
     color: rgba(255, 0, 0, 0.693);
     font-size: 16px;
+}
+
+#button-close
+{
+    position: fixed;
+
+    left: 25%;
 }
