@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <form method="POST" action="../controllers/signUp_Customer_Check.php" enctype="">
+
             <div class="signup-box">
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h1>Sign Up</h1>
@@ -46,68 +46,13 @@
                     <a href="signUp_Merchant.php" id="signup-link">Create a Business Account?</a>
                 </div>
                 <div class="signupbutton">
-                    <button type="submit" name="submit" id="button">Sign Up</button>
+                    <button name="submit" id="button" onclick="signup_AJAX()">Sign Up</button>
                 </div>
             </div>
-        </form>
-        
-        <?php
 
-            if(isset($_REQUEST['msg']))
-            {
-
-        ?>
-
-        <div class="message-box">
-            Message:
-            <p id="message-box-paragrapgh">
-            <?php
-
-                if($_REQUEST['msg'] == 'nullInputs')
-                {
-                    echo("Please fillup all the fileds.");
-                }
-                elseif($_REQUEST['msg'] == 'businessnameExsists')
-                {
-                    echo("Businessname Already Again. Please try agian with a new and unique name.");
-                }
-                elseif($_REQUEST['msg'] == 'invalidBusinessLink')
-                {
-                    echo("Invalid Business Link");
-                }
-                elseif($_REQUEST['msg'] == 'invalidEmail')
-                {
-                    echo("Invalid Email Format");
-                }
-                elseif($_REQUEST['msg'] == 'emailExsists')
-                {
-                    echo("Email already exsists. Please try with a new and unique Email.");
-                }
-                elseif($_REQUEST['msg'] == 'invalidPassword')
-                {
-                    echo("1. Passwords should be at least 8 characters long.<br/>
-                        2. Should contain atleast one symbol.<br/>
-                        3. Should contain at least one number.<br/>
-                        4. Password can not contain '|' charcter.");
-                }
-                elseif($_REQUEST['msg'] == 'passwdMismatch')
-                {
-                    echo("Passwords didn't match.");
-                }
-                elseif($_REQUEST['msg'] == 'signUpfailed')
-                {
-                    echo("Couldn't create an account. Please try again later.");
-                }
-
-            ?>
-            </p>
-        </div>
-
-        <?php
-
-            }
-
-        ?>
+            <div id="message-box">
+                <p id="message-text"></p>
+            </div>
 
     </body>
 </html>

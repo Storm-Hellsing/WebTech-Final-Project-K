@@ -6,12 +6,15 @@
 
     if(isset($_REQUEST['submit']))
     {
-        $businessName = $_REQUEST['businessname'];
-        $businessLink = $_REQUEST['businesslink'];
-        $userName = $_REQUEST['username'];
-        $userEmail = $_REQUEST['email'];
-        $userPassword = $_REQUEST['password'];
-        $retypePassword = $_REQUEST['retypepassword'];
+        $userData = $_REQUEST['userData'];
+        $credentials = json_decode($userData);
+
+        $userName = $credentials->username;
+        $userEmail = $credentials->email;
+        $userPassword = $credentials->password;
+        $retypePassword = $credentials->re_password;
+        $businessName = $credentials->businessname;
+        $businessLink = $credentials->businesslink;
 
         #validations
         $foundBusinessname = findBusinessName($businessName);
@@ -22,31 +25,41 @@
 
         if($businessName == "" && $businessLink == "" && $userName == "" && $userEmail == "" && $userPassword == "")
         {
-            header('location: ../views/signUp_Merchant.php?msg=nullInputs');
+            echo("Message:<br/><br/>
+            Please Fill up all the fields.");
         }
         elseif($foundBusinessname == 1)
         {
-            header('location: ../views/signUp_Merchant.php?msg=businessnameExsists');
+             echo("Message:<br/><br/>
+            The Businessname already exists.");
         }
         elseif($validBusinessLink == 0)
         {
-            header('location: ../views/signUp_Merchant.php?msg=invalidBusinessLink');
+            echo("Message:<br/><br/>
+            Please provide a valid URL for business website/page.");
         }
         elseif($validEmail == 0)
         {
-            header('location: ../views/signUp_Merchant.php?msg=invalidEmail');
+            echo("Message:<br/><br/>
+            Please provide a proper email format.");
         }
         elseif($foundEmail == 1)
         {
-            header('location: ../views/signUp_Merchant.php?msg=emailExsists');
+            echo("Message:<br/><br/>
+            The email already exists");
         }
         elseif($validPassword == 0)
         {
-            header('location: ../views/signUp_Merchant.php?msg=invalidPassword');
+            echo("Message:<br/><br/>
+            1. Passwords should be at least 8 characters long.<br/>
+            2. Should contain atleast one symbol.<br/>
+            3. Should contain at least one number.<br/>
+            4. Password can not contain '|' charcter.");
         }
         elseif($userPassword != $retypePassword)
         {
-            header('location: ../views/signUp_Merchant.php?msg=passwdMismatch');
+            echo("Message:<br/><br/>
+            The passwords mismatched.");
         }
         else
         {
@@ -54,11 +67,12 @@
 
             if($account_created)
             {
-                header('location: ../views/signIn.php?msg=signUpSuccess');
+               echo("Account has been created.");
             }
             else
             {
-                header('location: ../views/signUp_Merchant.php?msg=signUpfailed');
+                echo("Message:<br/><br/>
+                Failed to create an account. Please try again later.");
             }
         }
 
