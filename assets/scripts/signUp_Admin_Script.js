@@ -34,9 +34,9 @@ function signup_AJAX()
     {
         if(this.readyState == 4 && this.status == 200)
         {
-            if(this.responseText = "Account has been created.")
+            if (this.responseText == "Account has been created.") 
             {
-                window.location.replace("../views/account_Created.php");
+                window.location.href = "account_Created.php";
             }
             else
             {

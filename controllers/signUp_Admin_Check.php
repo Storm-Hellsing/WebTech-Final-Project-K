@@ -53,7 +53,7 @@
 
             if($account_created)
             {
-               echo("Account has been created.")
+               echo("Account has been created.");
             }
             else
             {
