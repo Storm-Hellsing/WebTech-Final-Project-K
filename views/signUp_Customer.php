@@ -3,6 +3,15 @@
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="../assets/stylesheets/signUp_Customer_Stylesheet.css">
         <script src="../assets/scripts/signUp_Customer_Script.js"></script>
+        <script>
+            document.addEventListener('keydown', function(event) 
+            {
+                if (event.keyCode === 13) 
+                {
+                    document.getElementById('button').click();
+                }
+            });
+        </script>
     </head>
 
     <body>
