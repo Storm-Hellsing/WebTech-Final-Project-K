@@ -5,8 +5,12 @@
 
     if(isset($_REQUEST['submit']))
     {
-        $userEmail = $_REQUEST['email'];
-        $userPassword = $_REQUEST['password'];
+        $userData = $_REQUEST['userData'];
+        $credentials = json_decode($userData);
+
+        $userEmail = $credentials->email;
+        $userPassword = $credentials->password;
+        $keep_Me_Signed_In = $credentials->keep_me_signed_in;
 
         $found_Admin = find_Admin($userEmail, $userPassword);
         $found_Cutomer = find_Customer($userEmail, $userPassword);
@@ -14,13 +18,13 @@
 
         if($userEmail == "" && $userPassword == "")
         {
-            header('location: ../views/signIn.php?msg=nullInputs');
+            echo("Please provide the above credentials.");
         } 
         elseif($found_Admin)
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($_REQUEST['keep_me_signed_in'] == "on")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
@@ -29,14 +33,14 @@
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
 
-            header('location: ../views/homePage_Admin.php');
+            echo("Admin Signed In");
 
         }
         elseif($found_Cutomer)
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($_REQUEST['keep_me_signed_in'] == "on")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
@@ -45,13 +49,13 @@
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
 
-            header('location: ../views/homePage_Admin.php');
+            echo("Customer Signed In");
         }
         elseif($found_Merchant)
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($_REQUEST['keep_me_signed_in'] == "on")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
@@ -60,11 +64,11 @@
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
 
-            header('location: ../views/homePage_Admin.php');
+            echo("Merchant Signed In");
         }
         else
         {
-            header('location: ../views/signIn.php?msg=userNotfound');
+            echo("The email of the password might be wrong. Please try again.");
         }
 
     }

@@ -2,10 +2,10 @@
     <head>
         <title>Sign In Page</title>
         <link rel="stylesheet" href="../assets/stylesheets/signIn_Stylesheet.css">
+        <script src="../assets/scripts/signIn_Script.js"></script>
     </head>
 
     <body>
-        <form method="POST" action="../controllers/signIn_Check.php" enctype="">
             <div class="signin-box">
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h1>Sign In</h1>
@@ -35,50 +35,16 @@
                     <a href="signUp_Customer.php" id="signup-link">Create an account?</a>
                 </div>
                 <div class="siginbutton">
-                    <button type="submit" name="submit" id="button">Sign In</button>
+                    <button name="submit" id="button" onclick="signup_AJAX()">Sign In</button>
                 </div>
                 <div class="forgotpasswordbutton">
                     <button type="submit" name="submit" id="button-forgotpass">Forgot Password?</button>
                 </div>
             </div>
-        </form>
 
-        <?php
-
-            if(isset($_REQUEST['msg']))
-            {
-
-        ?>
-
-        <div class="message-box">
-            Message:
-            <p id="message-box-paragraph">
-
-                <?php
-
-                    if($_REQUEST['msg'] == 'signUpSuccess')
-                    {
-                        echo("Your account has been created successfully. You can now Sign In.");
-                    }
-                    elseif($_REQUEST['msg'] == 'nullInputs')
-                    {
-                        echo("Please provide the above credentials.");
-                    }
-                    elseif($_REQUEST['msg'] == 'userNotfound')
-                    {
-                        echo("The email or the password might be wrong.");
-                    }
-
-                ?>
-
-            </p>
-        </div>
-
-        <?php
-
-            }
-
-        ?>
-
+            <div id="message-box">
+                <p id="message-text"></p>
+            </div>
+            
     </body>
 </html>

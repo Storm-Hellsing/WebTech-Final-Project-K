@@ -87,29 +87,29 @@ table
     text-align: center;
 }
 
-.message-box
+#message-box.show
 {
     background-color: gold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
     margin-left: 25px;
-    padding: 20px 20px;
+    padding: 5px 20px;
     width: 250px;
-    height: 100px;
+    height: 80px;
     position: fixed;
     left: 75%;
     top: 0%;
     transform: translateX(-50%);
     border-radius: 5px;
-    animation: slideTop 10s ease-in-out forwards;
+    animation: slideTop 3s ease-in-out forwards;
 }
 
 @keyframes slideTop 
 {
     0% 
     {
-        transform: translateY(-150px);
+        transform: translateY(-100px);
     }
     50% 
     {
@@ -118,13 +118,12 @@ table
     100% 
     {
         transform: translateY(5%);
-        opacity: 0;
     }
 }
 
-#message-box-paragraph
+#message-text
 {
-    color: green;
+    color: red;
     font-size: 16px;
     text-align: center;
 }

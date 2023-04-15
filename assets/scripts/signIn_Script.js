@@ -1,0 +1,44 @@
+function signup_AJAX()
+{
+    let userEmail = document.getElementById('email').value;
+    let userPassword = document.getElementById('password').value;
+    let keep_Me_Signed_In = document.getElementById('keep_me_signed_in').value;
+
+    let data = {'email':userEmail, 'password':userPassword, 'keep_me_signed_in':keep_Me_Signed_In};
+    let credentials = JSON.stringify(data);
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.open('post', '../controllers/signIn_Check.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send('submit&userData='+credentials);
+    xhttp.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "Admin Signed In") 
+            {
+                window.location.replace("../views/homePage_Admin.php");
+            }
+            else if(this.responseText == "Customer Signed In")
+            {
+                window.location.replace("../views/homePage_Customer.php");
+            }
+            else if(this.responseText == "Merchant Signed In")
+            {
+                window.location.replace("../views/homePage_Merchant.php");
+            }
+            else
+            {
+                showMessage(this.responseText);
+            }
+        }
+    }
+}
+
+function showMessage(message) 
+{
+    document.getElementById("message-text").innerHTML = message;
+    let messageBox = document.getElementById("message-box");
+    messageBox.classList.add("show");
+}
