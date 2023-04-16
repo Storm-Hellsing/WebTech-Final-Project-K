@@ -44,7 +44,7 @@
                     <a href="signUp_Customer.php" id="signup-link">Create an account?</a>
                 </div>
                 <div class="siginbutton">
-                    <button name="submit" id="button" onclick="signup_AJAX()" onkey="">Sign In</button>
+                    <button name="submit" id="button" onclick="signup_AJAX()">Sign In</button>
                 </div>
                 <div class="forgotpasswordbutton">
                     <button type="submit" name="submit" id="button-forgotpass">Forgot Password?</button>

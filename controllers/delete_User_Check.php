@@ -5,17 +5,20 @@
 
     if(isset($_REQUEST['delete']))
     {
-        $userID = $_REQUEST['userid'];
+        $userData = $_REQUEST['userData'];
+        $credentials = json_decode($userData);
+
+        $userID = $credentials->userid;
 
         $deleted_user = delete_operation_User($userID);
 
         if($deleted_user)
         {
-            header('location: ../views/user_all_List.php?msg=deletesuccess');
+            echo("The user has been deleted.");
         }
         else
         {
-            header('location: ../views/user_all_List.php?msg=deletefailed');   
+            echo("Could not delete the user.");  
         }
     }
     else

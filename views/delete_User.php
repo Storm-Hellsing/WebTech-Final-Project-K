@@ -15,28 +15,49 @@
         <title>
             Delete User
         </title>
+        <link rel="stylesheet" href="../assets/stylesheets/delete_User_Stylesheet.css">
+        <script src="../assets/scripts/delete_User_Script.js"></script>
     </head>
 
     <body>
-        <form method="POST" action="../controllers/delete_User_Check.php" enctype="">
+        <div id="main-box">
             <input type="hidden" name="userid" id="userid" value="<?php echo($userData['user_id']) ?>">
-            <fieldset>
-                <legend>Delete Products</legend>
-                <label for="userid">User ID: <?php echo($userData['user_id']); ?></label> <br/>
-                <label for="username">User Name: <?php echo($userData['user_name']); ?></label> <br/>
-                <label for="email">Email: <?php echo($userData['user_email']); ?></label> <br/>
-                <label for="mobile">Mobile: <?php echo isset($userData['user_mobile']) ? $userData['user_mobile'] : "Not Provided"; ?></label> <br/>
-                <label for="joiningdate">Joining Date: <?php echo($userData['joining_date']); ?></label> <br/>
+            <h1 id="header">Delete User</h1>
+                <table id="table">
+                    <tr>
+                        <th align="left">User ID: </th>
+                        <th align="right"><?php echo($userData['user_id']); ?></th>
+                    </tr>
+                    <tr>
+                        <th align="left">User Name: </th>
+                        <th align="right"><?php echo($userData['user_name']); ?></th>
+                    </tr>
+                    <tr>
+                        <th align="left">Email: </th>
+                        <th align="right"><?php echo($userData['user_email']); ?></th>
+                    </tr>
+                    <tr>
+                        <th align="left">Mobile: </th>
+                        <th align="right"><?php echo isset($userData['user_mobile']) ? $userData['user_mobile'] : "Not Provided"; ?></th>
+                    </tr>
+                    <tr>
+                        <th align="left">Joining Date: </th>
+                        <th align="right"><?php echo($userData['joining_date']); ?></th>
+                    </tr>
+                </table>
                 <hr>
-                <input type="submit" name="delete" id="delete" value="Delete"/>
-                <br/>
-            </fieldset>
 
-            <br/><br/>
+                <div id="delete-button">
+                <button name="delete" id="delete" onclick="delete_AJAX()">Delete</button>
+                </div>
+                <div id="view-users-button">
+                <button name="view-users" id="view-users">View Users</button>
+                </div>
+        </div>
 
-            <h3 align="center"><a href="user_all_List.php">View User List</a></h3>
-
-        </form>
+        <div id="message-box">
+            <p id="message-text"></p>
+        </div>
     </body>
 </html>
 
