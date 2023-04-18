@@ -1,17 +1,21 @@
 body
 {
-    background-color: rgb(25, 25, 25);
+    background-image: url(../graphics/general_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .signin-box
 {
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     padding: 0px 0px 0px 10px;
-    background-color: gold;
+    background-color: #FFC248;
     height: 425px;
     width: 275px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+    border: 5px solid black;
     border-radius: 5px;
     position: fixed;
     top: 50%;
@@ -40,7 +44,7 @@ input
 input:focus
 {
     outline: none;
-    border-color: blueviolet;
+    border-color: #FFC248;
 }
 
 .check-box
@@ -62,7 +66,7 @@ table
     font-size: 20px;
     font-weight: bold;
     border: none;
-    color: gold;
+    color: #FFC248;
     padding: 15px 50px;
     text-decoration: none;
     display: inline-block;
@@ -89,7 +93,8 @@ table
 
 #message-box.show
 {
-    background-color: gold;
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
@@ -123,7 +128,7 @@ table
 
 #message-text
 {
-    color: red;
+    color: #FFC248;
     font-size: 16px;
     text-align: center;
 }
@@ -149,12 +154,12 @@ table
 
 #button-forgotpass
 {
-    background-color: gold;
+    background-color: #FFC248;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 3px solid black;
     color: rgb(25, 25, 25);
     padding: 5px 50px;
     text-decoration: none;
@@ -177,5 +182,6 @@ table
 
 #button-forgotpass:hover
 {
-    background-color: rgb(255, 227, 70);
+    background-color: rgb(25, 25, 25);
+    color: #FFC248;
 }

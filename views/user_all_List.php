@@ -10,18 +10,23 @@
 <html>
     <head>
         <title>User List</title>
+        <link rel="stylesheet" href="../assets/stylesheets/user_all_List_Stylesheet.css">
         <script src="../assets/scripts/user_all_Search_Script.js"></script>
     </head>
         
     <body>
-        <div class="main-block">
-            <h1 align="center">User List</h1>
-            <a href="user_Admin_List.php" target="_blank">Admin's List</a>
-            <a href="user_Customer_List.php" target="_blank">Customer's List</a>
-            <a href="user_Merchant_List.php?" target="_blank">Merchant's List</a>
-            <br/> <br/>
-            <label for="searchresult">Search User: </label>
-            <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile/Business" value="" onkeyup="search()"/>
+        <div id="main-box">
+            <h1 align="center" id="header">User List</h1>
+            <a href="user_Admin_List.php" target="_blank" class="menu">Admin's List</a>
+            <a href="user_Customer_List.php" target="_blank" class="menu">Customer's List</a>
+            <a href="user_Merchant_List.php?" target="_blank" class="menu">Merchant's List</a>
+        </div>
+
+        <div id="table-area">
+            <div id="search">
+                <label for="searchresult">Search User: </label>
+                <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile/Business" value="" onkeyup="search()"/>
+            </div>
             <?php
 
                 $found = find_user_all();
@@ -68,11 +73,11 @@
                     <td><?php echo $userData['joining_time']; ?></td>
                     <form method="GET" action="delete_User.php" enctype="">
                         <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
-                        <td><button type="submit" name="delete" id="delete">Delete</button></td>
+                        <td><button type="submit" name="delete" id="delete" class="delete-button">Delete</button></td>
                     </form>
                     <form method="GET" action="edit_User_Password.php" enctype="">
                         <input type="hidden" name="userid" id="userid" value="<?php echo $userData['user_id']; ?>"/>
-                        <td><button type="submit" name="edit" id="edit">Change Password</button></td>
+                        <td><button type="submit" name="edit" id="edit" class="edit-button">Change Password</button></td>
                     </form>
                 </tr>
                 <?php 
@@ -83,6 +88,7 @@
 
                 ?>
             </table>
+        </div>
 
             <?php 
 
@@ -95,7 +101,6 @@
             ?>
 
             </br> </br>
-        </div>
         <?php
 
             if(isset($_REQUEST['msg']))

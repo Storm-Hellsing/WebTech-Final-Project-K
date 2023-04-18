@@ -1,17 +1,21 @@
 body
 {
-    background-color: rgb(25, 25, 25);
+    background-image: url(../graphics/general_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .signup-box
 {
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     padding: 0px 0px 0px 10px;
-    background-color: gold;
+    background-color: #FFC248;
     height: 570px;
     width: 275px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+    border: 5px solid black;
     border-radius: 5px;
     position: fixed;
     top: 50%;
@@ -40,7 +44,7 @@ input
 input:focus
 {
     outline: none;
-    border-color: blueviolet;
+    border-color: #FFC248;
 }
 
 .check-box
@@ -62,7 +66,7 @@ table
     font-size: 20px;
     font-weight: bold;
     border: none;
-    color: gold;
+    color: #FFC248;
     padding: 15px 50px;
     text-decoration: none;
     display: inline-block;
@@ -88,13 +92,12 @@ table
 
 #message-box.show
 {
-    background-color: gold;
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
     padding: 10px 10px;
-    width: 250px;
-    height: 250px;
     position: fixed;
     left: 70%;
     top: 30%;
@@ -110,18 +113,19 @@ table
     }
     50% 
     {
-      transform: translateY(25px);
+      transform: translateY(75px);
     }
     100% 
     {
-      transform: translateY(0px);
+      transform: translateY(50px);
     }
 }
 
 #message-text
 {
-    color: rgba(255, 0, 0, 0.693);
+    color: #FFC248;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .links

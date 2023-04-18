@@ -50,11 +50,13 @@
         }
         elseif($validPassword == 0)
         {
-            echo("Message:<br/><br/>
-            1. Passwords should be at least 8 characters long.<br/>
-            2. Should contain atleast one symbol.<br/>
-            3. Should contain at least one number.<br/>
-            4. Password can not contain '|' charcter.");
+            echo("<u>Password Fromat:</u> <br/> <br/>
+            <ol>
+                <li>Passwords should be at least 8 characters long.</li>
+                <li>Should contain atleast one symbol.</li>
+                <li>Should contain at least one number.</li>
+                <li>Password can not contain '|' charcter.</li>
+            </ol>");
         }
         elseif($userPassword != $retypePassword)
         {

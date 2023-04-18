@@ -70,7 +70,11 @@
             </div>
 
             <div id="message-box">
-                <p id="message-text"></p>
+                <table>
+                    <tr>
+                        <td><p id="message-text"></p></td>
+                    </tr>
+                </table>
             </div>
 
     </body>
