@@ -43,7 +43,7 @@
                 <th width="250px">User Name</th>
                 <th width="250px">User Email</th>
                 <th width="250px">User Mobile</th>
-                <th width="250px">User's Business Name</th>
+                <th width="250px">Business Name</th>
                 <th width="250px">Business Link</th>
                 <th width="250px">Joining Date</th>
                 <th width="250px">Time</th>
@@ -68,7 +68,7 @@
                     <td><?php echo $userData['user_email']; ?></td>
                     <td><?php echo isset($userData['user_mobile']) ? $userData['user_mobile'] : ''; ?></td>
                     <td><?php echo isset($userData['user_businessname']) ? $userData['user_businessname'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
-                    <td><?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?></td> <?php //Check whether the field for that specific row is empty ?>
+                    <td><a href="<?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?>" id="url-links"><?php echo isset($userData['user_businesslink']) ? $userData['user_businesslink'] : ''; ?></a></td> <?php //Check whether the field for that specific row is empty ?>
                     <td><?php echo $userData['joining_date']; ?></td>
                     <td><?php echo $userData['joining_time']; ?></td>
                     <form method="GET" action="delete_User.php" enctype="">

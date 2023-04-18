@@ -1,7 +1,6 @@
 body
 {
-    background-image: url(../graphics/background-1.jpg);
-    background-repeat: no-repeat;
+    background-image: url(../graphics/background-3.jpg);
     background-size: cover;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -60,11 +59,13 @@ body
 th
 {
     background-color: #FFC248;
+    font-size: 16px;
 }
 
 tr
 {
     background-color: whitesmoke;
+    font-size: 12px;
 }
 
 tr:hover
@@ -93,5 +94,26 @@ tr:hover
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     border: none;
+    cursor: pointer;
+}
 
+.delete-button:hover
+{
+    background-color: rgb(253, 100, 100);
+}
+
+.edit-button:hover
+{
+    background-color: rgb(80, 200, 255);
+}
+
+#url-links
+{
+    text-decoration: none;
+    color: mediumblue;
+}
+
+#url-links:hover
+{
+    text-decoration: underline;
 }

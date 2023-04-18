@@ -50,9 +50,10 @@
                 <div id="delete-button">
                 <button name="delete" id="delete" onclick="delete_AJAX()">Delete</button>
                 </div>
-                <div id="view-users-button">
-                <button name="view-users" id="view-users">View Users</button>
-                </div>
+        </div>
+
+        <div id="view-users-button">
+                <a href="user_all_List.php" id="view-users">View Users</a>
         </div>
 
         <div id="message-box">

@@ -1,7 +1,6 @@
 body
 {
     background-image: url(../graphics/home_background.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
