@@ -10,16 +10,14 @@
 <html>
     <head>
         <title>Admin List</title>
+        <script src="../assets/scripts/user_all_Search_Script.js"></script>
     </head>
         
     <body>
         <div class="main-block">
             <h1 align="center">Admin List</h1>
-            <form method="GET" action="../controllers/user_Admin_List_Search_Check.php" target="_blank" enctype="">
             <label for="searchresult">Search User: </label>
-            <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile" value=""/>
-            <input type="submit" name="submit" id="submit" value="Search"/>  
-            </form>
+            <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile/Business" value="" onkeyup="search()"/>
 
             <?php
 
@@ -30,7 +28,7 @@
 
             ?>
 
-            <table align="center" border="1" width="1500px">
+            <table align="center" border="1" width="1500px" id="user_all_table">
             <tr>
                 <th width="25px">Serial No:</th>
                 <th width="250px">User ID</th>

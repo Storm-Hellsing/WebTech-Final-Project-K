@@ -24,7 +24,7 @@
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($keep_Me_Signed_In == "1")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
@@ -40,7 +40,7 @@
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($keep_Me_Signed_In == "1")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
@@ -55,7 +55,7 @@
         {
             $userData = fetch_Data_Specific($userEmail, $userPassword);
 
-            if($keep_Me_Signed_In == "1")
+            if($keep_Me_Signed_In == "on")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
