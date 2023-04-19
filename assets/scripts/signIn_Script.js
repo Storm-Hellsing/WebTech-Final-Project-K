@@ -1,3 +1,20 @@
+function togglePassword() 
+{
+    let passwordInput = document.getElementById("password");
+    let label = document.getElementById("show-password");
+
+    if (passwordInput.type === "password") 
+    {
+        passwordInput.type = "text";
+        label.innerHTML = "Hide"
+    } 
+    else 
+    {
+        passwordInput.type = "password";
+        label.innerHTML = "Show"
+    }
+}
+
 function signup_AJAX()
 {
     let userEmail = document.getElementById('email').value;

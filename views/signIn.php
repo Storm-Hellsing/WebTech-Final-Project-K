@@ -26,6 +26,7 @@
                 <div class="form-box">
                     <label for="password">Password:</label><br>
                     <input type="password" name="password" id="password" value=""/>
+                    <button id="show-password" onclick="togglePassword()">Show</button>
                     <br>
                 </div>
                 <div>

@@ -184,3 +184,22 @@ table
     background-color: rgb(25, 25, 25);
     color: #FFC248;
 }
+
+#show-password
+{
+    text-decoration: none;
+    background-color: rgba(25, 25, 25, 0);
+    border: none;
+    color: #FFC248;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: fixed;
+    left: 75%;
+    top: 51%;
+}
+
+#show-password:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
