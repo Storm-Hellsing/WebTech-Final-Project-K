@@ -11,15 +11,14 @@
 
 <html>
     <head>
-        <title>Edit Admin</title>
+        <title>Force Change Password</title>
         <link rel="stylesheet" href="../assets/stylesheets/edit_User_Password_Stylesheet.css">
         <script src="../assets/scripts/edit_User_Password_Script.js"></script>
     </head>
 
     <body>
-        <form method="POST" action="../controllers/edit_User_Password_Check.php" enctype="">
             <input type="hidden" name="userid" id="userid" value="<?php echo($userData['user_id']); ?>">
-            <div class="main-box">
+            <div id="main-box">
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h2>Force Change Password</h2>
                 <div class="form-box">
@@ -49,53 +48,27 @@
                         </tr>
                     </table>
                 </div>
-                <div class="editbutton">
-                    <button type="submit" name="edit" id="button">Edit</button>
+                <div id="editbutton">
+                    <button name="edit" id="button" onclick="edit_AJAX()">Edit</button>
                     <a href="user_Admin_List.php" id="button">Cancel</a>
                 </div>
             </div>
-        </form>
 
-        <?php
+            <div id="message-box">
+                <table>
+                    <tr>
+                        <td><p id="message-text"></p></td>
+                    </tr>
+                </table>
+            </div>
 
-            if(isset($_REQUEST['msg']))
-            {
-
-        ?>
-
-        <div class="message-box">
-            Message:
-            <p id="message-box-paragrapgh">
-        <?php
-
-            if($_REQUEST['msg'] == 'nullInputs')
-            {
-                echo("Please fillup all the fileds.");
-            }
-            elseif($_REQUEST['msg'] == 'wrongcurrentPassword')
-            {
-                echo("Current Password seems to be wrong. Please try again.");
-            }
-            elseif($_REQUEST['msg'] == 'invalidPassword')
-            {
-                echo("1. Passwords should be at least 8 characters long.<br/>
-                    2. Should contain atleast one symbol.<br/>
-                    3. Should contain at least one number.<br/>
-                    4. Password can not contain '|' charcter.");
-            }
-            elseif($_REQUEST['msg'] == 'passwdMismatch')
-            {
-                echo("Passwords did not match. Please try again.");
-            }
-        ?>
-            </p>
-        </div>
-
-        <?php
-
-            }
-
-        ?>
+            <div id="message-box-change-success">
+                <table>
+                    <tr>
+                        <td><p id="success-text"></p></td>
+                    </tr>
+                </table>
+            </div>
 
     </body>
 </html>

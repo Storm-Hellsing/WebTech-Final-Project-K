@@ -6,10 +6,13 @@
 
     if(isset($_REQUEST['edit']))
     {
-        $userID = $_REQUEST['userid'];
-        $currentPassword = $_REQUEST['currentpassword'];
-        $newPassword = $_REQUEST['password'];
-        $retypePassword = $_REQUEST['retypepassword'];
+        $userData = $_REQUEST['userData'];
+        $credentials = json_decode($userData);
+
+        $userID = $credentials->userid;
+        $currentPassword = $credentials->currentpassword;
+        $newPassword = $credentials->password;
+        $retypePassword = $credentials->retypepassword;
 
         #validations
         $validPassword = validatePassword($newPassword);
@@ -19,19 +22,28 @@
 
         if($currentPassword == "" && $newPassword == "" && $retypePassword == "")
         {
-            header('location: ../views/edit_User_Password.php?msg=nullInputs');
+            echo("Message:<br/><br/>
+            Please Fill up all the fields.");
         }
-        elseif($found_Current_Password === false) 
+        elseif($found_Current_Password < 1) 
         {
-            header('location: ../views/edit_User_Password.php?msg=wrongcurrentPassword');
+            echo("Message:<br/><br/>
+            Your current password seems to be wrong.");
         }
         elseif($validPassword == 0)
         {
-            header('location: ../views/edit_User_Password.php?msg=invalidPassword');
+            echo("<u>Password Fromat:</u> <br/> <br/>
+            <ol>
+                <li>Passwords should be at least 8 characters long.</li>
+                <li>Should contain atleast one symbol.</li>
+                <li>Should contain at least one number.</li>
+                <li>Password can not contain '|' charcter.</li>
+            </ol>");
         }
         elseif($newPassword != $retypePassword)
         {
-            header('location: ../views/edit_User_Password.php?msg=passwdMismatch');
+            echo("Message:<br/><br/>
+            The passwords mismatched.");
         }
         else
         {
@@ -40,11 +52,12 @@
 
             if($updated)
             {
-                header('location: ../views/user_all_List.php?msg=editSuccess');
+                echo("Password has been changed.");
             }
             else
             {
-                header('location: ../views/user_all_List.php?msg=editfailed');
+                echo("Message:<br/><br/>
+                Unable to change the password. Please try again.");
             }
         }
 
