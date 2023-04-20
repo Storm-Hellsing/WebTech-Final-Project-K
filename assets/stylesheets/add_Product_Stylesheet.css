@@ -1,0 +1,88 @@
+body
+{
+    background-image: url(../graphics/background-3.jpg);
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#main-box
+{
+    background-color: #FFC248;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    width: 750px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.labels
+{
+    display: inline-block;
+    text-align: left;
+}
+
+.inputs
+{
+    margin-bottom: 10px;
+    background-color: rgb(25, 25, 25);
+    color: whitesmoke;
+    width: 264px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.inputs:focus
+{
+    outline: 3px solid whitesmoke;
+}
+
+#description
+{
+    text-decoration: none;
+    resize: none;
+    height: 75px;
+    padding-top: 10px;
+}
+
+#hr
+{
+    width: 350px;
+    position: fixed;
+    top: 50%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    background-color: rgb(25, 25, 25);
+    border: 2px solid black;
+}
+
+#add
+{
+    text-decoration: none;
+    background-color: rgb(25, 25, 25);
+    color: #FFC248;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-left: 80px;
+    padding: 15px 35px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 5px;
+}
+
+#add:hover
+{
+    background-color: rgb(75, 75, 75);
+}
+
+

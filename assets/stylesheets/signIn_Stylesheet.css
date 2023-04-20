@@ -33,17 +33,17 @@ input
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     color: white;
-    width: 264px;
+    width: 265px;
     height: 35px;
     margin-bottom: 10px;
     border-radius: 5px;
     border-color: black;
+    padding: 10px 10px;
 }
 
 input:focus
 {
-    outline: none;
-    border-color: #FFC248;
+    outline: 3px solid whitesmoke;
 }
 
 .check-box
@@ -158,7 +158,7 @@ table
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     font-weight: bold;
-    border: 3px solid black;
+    outline: 3px solid black;
     color: rgb(25, 25, 25);
     padding: 5px 50px;
     text-decoration: none;
@@ -183,6 +183,7 @@ table
 {
     background-color: rgb(25, 25, 25);
     color: #FFC248;
+    outline: 3px solid #FFC248;
 }
 
 #show-password

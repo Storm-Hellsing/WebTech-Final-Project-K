@@ -13,8 +13,8 @@
 
 <html>
     <head>
-        <title>Home Admin</title>
-        <link rel="stylesheet" href="../stylesheets/homePage_Admin.css">
+        <title>Home Merchant</title>
+        <link rel="stylesheet" href="../assets/stylesheets/homePage_Merchant.css">
     </head>
 
     <body>
@@ -24,7 +24,6 @@
             <a href="inventory.php" target="_blank" class="menu">My Products</a>
             <a href="" target="_blank" class="menu">My Orders</a>
             <a href="" target="_blank" class="menu">My Cart</a>
-            <a href="user_all_List.php" target="_blank" class="menu">View Users</a>
             <a href="" target="_blank" class="menu">Settings</a>
             <a href="" target="_blank" class="menu">My profile</a>
             <a href="logout.php" class="menu">Logout</a>

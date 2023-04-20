@@ -37,12 +37,12 @@ input
     margin-bottom: 10px;
     border-radius: 5px;
     border-color: black;
+    padding: 10px 10px;
 }
 
 input:focus
 {
-    outline: none;
-    border-color: #FFC248;
+    outline: 3px solid whitesmoke;
 }
 
 .check-box
