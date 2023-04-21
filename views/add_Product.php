@@ -13,6 +13,7 @@
     <head>
         <title>Product Types</title>
         <link rel="stylesheet" href="../assets/stylesheets/add_Product_Stylesheet.css">
+        <script src="../assets/scripts/add_Product_Script.js"></script>
     </head>
 
     <body>
@@ -39,10 +40,13 @@
             <label for="description" class="labels">Product Description:</label><br/>
             <textarea name="description" id="description" class="inputs" cols="30" rows="5"></textarea>
             <br/>
-            <input type="file" name="image" id="image" accept="image/jpg, image/jpeg, image/png">
+            <input type="file" name="image[]" id="image" accept="images/*" multiple onchange="previewImages(event)">
             <br/>
             <hr id="hr">
             <button name="add" id="add">Add</button>
+            <div id="preview-container">
+                <p id="image-text">Image Previewer</p>
+            </div>
         </div>
     </body>
 </html>
