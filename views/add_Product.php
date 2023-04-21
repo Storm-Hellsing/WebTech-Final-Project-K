@@ -5,7 +5,8 @@
     if(isset($_COOKIE['userLoggedIn']))
     {
 
-    
+        require_once("../models/product_type_model.php");
+        $merchantID = $_COOKIE['userLoggedIn'];
 
 ?>
 
@@ -17,16 +18,28 @@
     </head>
 
     <body>
+        <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>"/>
         <div id="main-box">
         <h1 id="header">Add Product</h1>
-        <a href="" id="link-product-list">View Product List</a>
+        <a href="" id="link-product-list">Inventory</a>
             <label for="productype" class="labels">Product Type:</label>
             <br/>
-            <select name="productType" id="productType" class="inputs">
+            <select name="producttype" id="producttype" class="inputs">
                 <option value="">Select Product Type</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Gadgets and Accessories">Gadgets and Accessories</option>
+            <?php
+
+                $result = fetch_product_type_general();
+
+                while($productType = mysqli_fetch_assoc($result))
+                {
+
+            ?>
+                <option value="<?php echo($productType['product_type_name']); ?>"><?php echo($productType['product_type_name']); ?></option>
+            <?php
+
+                }
+
+            ?>
             </select>
             <br/>
             <label for="produtname" class="labels">Product Name:</label><br/>
@@ -44,11 +57,20 @@
             <input type="file" name="image[]" id="image" accept="images/*" multiple onchange="previewImages(event)">
             <br/>
             <hr id="hr">
-            <button name="add" id="add">Add</button>
+            <button name="add" id="add" onclick="addProduct_AJAX()">Add</button>
             <div id="preview-container">
                 <img src="../assets/graphics/package.png" id="image-previewer"/>
             </div>
         </div>
+
+        <div id="message-box">
+                <table>
+                    <tr>
+                        <td><p id="message-text"></p></td>
+                    </tr>
+                </table>
+        </div>
+
     </body>
 </html>
 
