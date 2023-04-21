@@ -17,8 +17,9 @@
     </head>
 
     <body>
-        <h1>Add Product</h1>
         <div id="main-box">
+        <h1 id="header">Add Product</h1>
+        <a href="" id="link-product-list">View Product List</a>
             <label for="productype" class="labels">Product Type:</label>
             <br/>
             <select name="productType" id="productType" class="inputs">
@@ -45,7 +46,7 @@
             <hr id="hr">
             <button name="add" id="add">Add</button>
             <div id="preview-container">
-                <p id="image-text">Image Previewer</p>
+                <img src="../assets/graphics/package.png" id="image-previewer"/>
             </div>
         </div>
     </body>

@@ -5,6 +5,31 @@ body
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#link-product-list
+{
+    background-color: rgb(0, 145, 255);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    outline: 3px solid black;
+    color: rgb(25, 25, 25);
+    padding: 5px 50px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    position: fixed;
+    left: 73%;
+    top: 7%;
+}
+
+#link-product-list:hover
+{
+    background-color: rgb(25, 25, 25);
+    background-color: rgb(80, 165, 255);
+}
+
 #main-box
 {
     background-color: #FFC248;
@@ -17,6 +42,11 @@ body
     padding: 25px 25px;
     border-radius: 5px;
     font-weight: bold;
+}
+
+#header
+{
+    text-align: center;
 }
 
 .labels
@@ -54,10 +84,10 @@ body
 
 #hr
 {
-    width: 350px;
+    width: 400px;
     position: fixed;
-    top: 50%;
-    left: 34%;
+    top: 55%;
+    left: 30%;
     transform: translate(-50%, -50%);
     transform: rotate(90deg);
     background-color: rgb(25, 25, 25);
@@ -126,12 +156,12 @@ body
     border-radius: 5px;
 }
 
-#image-text
+#image-previewer
 {
     color: whitesmoke;
     text-align: center;
     position: fixed;
-    top: 47.5%;
+    top: 53%;
     left: 75.5%;
     transform: translate(-50%, -50%);
 }

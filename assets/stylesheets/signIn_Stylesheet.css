@@ -153,7 +153,7 @@ table
 
 #button-forgotpass
 {
-    background-color: #FFC248;
+    background-color: rgb(0, 145, 255);
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
@@ -181,9 +181,7 @@ table
 
 #button-forgotpass:hover
 {
-    background-color: rgb(25, 25, 25);
-    color: #FFC248;
-    outline: 3px solid #FFC248;
+    background-color: rgb(80, 165, 255);
 }
 
 #show-password

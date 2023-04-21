@@ -58,7 +58,7 @@ hr
 
 #view-users
 {
-    background-color: #FFC248;
+    background-color: rgb(0, 145, 255);
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     width: 100px;
     text-align: center;
@@ -66,7 +66,6 @@ hr
     font-size: 16px;
     font-weight: bold;
     outline: 3px solid black;
-    color: rgb(25, 25, 25);
     padding: 5px 50px;
     text-decoration: none;
     display: inline-block;
@@ -82,9 +81,7 @@ hr
 
 #view-users:hover
 {
-    background-color: rgb(25, 25, 25);
-    color: #FFC248;
-    outline: 3px solid #FFC248;
+    background-color: rgb(80, 165, 255);
 }
 
 #message-box.show
