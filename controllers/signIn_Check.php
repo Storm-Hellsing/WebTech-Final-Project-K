@@ -16,7 +16,7 @@
         $found_Cutomer = find_Customer($userEmail, $userPassword);
         $found_Merchant = find_Merchant($userEmail, $userPassword);
 
-        if($userEmail == "" && $userPassword == "")
+        if($userEmail == "" || $userPassword == "")
         {
             echo("Please provide the above credentials.");
         } 

@@ -21,7 +21,7 @@
         #validations
         $found = find_product_by_product_name($productName);
 
-        if($productType == "" && $productName == "" && $productPrice == "" && $productQuantity == "" && $productDescription == "")
+        if($productType == "" || $productName == "" || $productPrice == "" || $productQuantity == "" || $productDescription == "")
         {
             echo("Please fill up all the fields.");
         }

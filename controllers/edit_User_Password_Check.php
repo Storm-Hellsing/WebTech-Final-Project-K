@@ -20,7 +20,7 @@
         #sql Query
         $found_Current_Password = find_Current_Password($userID, $currentPassword);
 
-        if($currentPassword == "" && $newPassword == "" && $retypePassword == "")
+        if($currentPassword == "" || $newPassword == "" || $retypePassword == "")
         {
             echo("Message:<br/><br/>
             Please Fill up all the fields.");

@@ -101,29 +101,6 @@
             ?>
 
             </br> </br>
-        <?php
-
-            if(isset($_REQUEST['msg']))
-            {
-                if($_REQUEST['msg'] == 'deletesuccess')
-                {
-                    echo("The user been deleted.");
-                }
-                elseif($_REQUEST['msg'] == 'deletefailed')
-                {
-                    echo("<b>Could Not delete user.</b>");
-                }
-                elseif($_REQUEST['msg'] == 'editSuccess')
-                {
-                    echo("<b>Updated User Password.</b>");
-                }
-                elseif($_REQUEST['msg'] == 'editfailed')
-                {
-                    echo("<b>Could Not update user information.</b>");
-                }
-            }
-
-        ?>
     </body>
 </html>
 

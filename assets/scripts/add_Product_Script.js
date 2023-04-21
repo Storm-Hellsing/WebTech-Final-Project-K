@@ -80,8 +80,22 @@ function addProduct_AJAX()
     {
         if(this.readyState == 4 && this.status == 200)
         {
-            
-          showMessage(this.responseText);
+          
+          if(this.responseText == "Product Details has been added to inventory.")
+          {
+            showMessage(this.responseText);
+            document.getElementById('producttype').selectedIndex = 0;
+            document.getElementById('merchantid').value = null;
+            document.getElementById('produtname').value = null;
+            document.getElementById('price').value = null;
+            document.getElementById('quantity').value = null;
+            document.getElementById('description').value = null;
+            document.getElementById('image').value = null;
+          }
+          else
+          {
+            showMessage(this.responseText);
+          }
           
         }
       }

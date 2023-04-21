@@ -1,33 +1,111 @@
 <?php
 
-    session_start();
-    
+    require_once("../models/product_all_model.php");
+
     if(isset($_COOKIE['userLoggedIn']))
     {
-
-    
 
 ?>
 
 <html>
     <head>
-        <title>Inventory</title>
+        <title>User List</title>
+        <link rel="stylesheet" href="../assets/stylesheets/inventory_Stylesheet.css">
+        <script src="../assets/scripts/inventory_Search_Script.js"></script>
     </head>
-
+        
     <body>
-        <form method="POST" action="" enctype="multipart/form-data"></form>
-        <div class="main-box">
-            <h1>Inventory</h1>
-            <a href="" class="menu">Add Product to Inventory</a>
-            <br/> <br/>
-            <label for="productype"></label>
-            <input type="text">
+        <div id="main-box">
+            <h1 align="center" id="header">User List</h1>
+            <a href="user_Admin_List.php" target="_blank" class="menu">Add Product</a>
         </div>
+
+        <div id="table-area">
+            <div id="search">
+                <label for="searchresult">Search User: </label>
+                <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile/Business" value="" onkeyup="search()"/>
+            </div>
+            <?php
+
+                $found = find_product_all_general();
+
+                if($found > 0)
+                {
+
+            ?>
+            <table align="center" border="1" width="1500px" id="user_all_table">
+            <tr>
+                <th width="25px">Serial No:</th>
+                <th width="250px">Product ID</th>
+                <th width="250px">Product Type</th>
+                <th width="250px">Product Name</th>
+                <th width="250px">Product Price</th>
+                <th width="250px">Product Quantity</th>
+                <th width="250px">Product Description</th>
+                <th width="250px">Added On</th>
+                <th width="250px">Time</th>
+                <th width="250px" colspan="2">Action</th>
+                </tr>
+                    
+                
+                <?php
+                    
+                    $count = 1;
+                    $fetched_Data = fetch_product_all_general();
+                    
+                    while($productData = mysqli_fetch_assoc($fetched_Data))
+                    {
+
+                ?>
+                <tr align="center">
+                    <td><?php echo $count; ?></td>
+                    <td><?php echo $productData['product_id']; ?></td>
+                    <td><?php echo $productData['product_type']; ?></td>
+                    <td><?php echo $productData['product_name']; ?></td>
+                    <td><?php echo $productData['product_price']; ?></td>
+                    <td><?php echo $productData['product_quantity']; ?></td> <?php //Check whether the field for that specific row is empty ?>
+                    <td><?php echo $productData['product_description']; ?></td>
+                    <td><?php echo $productData['added_date']; ?></td>
+                    <td><?php echo $productData['added_time']; ?></td>
+                    <form method="GET" action="delete_User.php" enctype="">
+                        <input type="hidden" name="userid" id="userid" value="<?php echo $productData['product_id']; ?>"/>
+                        <td><button type="submit" name="delete" id="delete" class="delete-button">Delete</button></td>
+                    </form>
+                    <form method="GET" action="edit_User_Password.php" enctype="">
+                        <input type="hidden" name="userid" id="userid" value="<?php echo $productData['product_id']; ?>"/>
+                        <td><button type="submit" name="edit" id="edit" class="edit-button">Edit</button></td>
+                    </form>
+                </tr>
+                <?php 
+
+                    $count++;
+
+                    }
+
+                ?>
+            </table>
+        </div>
+
+            <?php 
+
+                }
+                else
+                {
+                    echo("<b>The List is empty.</b>");
+                }
+                
+            ?>
+
+            </br> </br>
     </body>
 </html>
 
 <?php
 
+    }
+    else
+    {
+        header('location: ../views/signIn.php');
     }
 
 ?>

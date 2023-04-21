@@ -21,7 +21,7 @@
         <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>"/>
         <div id="main-box">
         <h1 id="header">Add Product</h1>
-        <a href="" id="link-product-list">Inventory</a>
+        <a href="inventory.php" id="link-product-list">Inventory</a>
             <label for="productype" class="labels">Product Type:</label>
             <br/>
             <select name="producttype" id="producttype" class="inputs">

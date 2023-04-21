@@ -23,7 +23,7 @@
         $foundEmail = findEmail($userEmail);
         $validPassword = validatePassword($userPassword);
 
-        if($businessName == "" && $businessLink == "" && $userName == "" && $userEmail == "" && $userPassword == "")
+        if($businessName == "" || $businessLink == "" || $userName == "" || $userEmail == "" || $userPassword == "")
         {
             echo("Message:<br/><br/>
             Please Fill up all the fields.");
