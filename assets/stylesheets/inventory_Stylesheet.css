@@ -5,6 +5,12 @@ body
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#header
+{
+    position: sticky;
+    top: 38px;
+}
+
 #main-box
 {
     background-color: #FFC248;
@@ -18,15 +24,20 @@ body
 
 .menu
 {
+    background-color: rgb(0, 220, 4);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     color: rgb(25, 25, 25);
+    padding: 7px 7px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    position: sticky;
+    left: 95%;
 }
 
 .menu:hover
 {
-    color: rgb(75, 75, 75);
+    background-color: rgb(21, 255, 0);
 }
 
 #table-area
@@ -56,6 +67,11 @@ body
     border-color: #FFC248;
 }
 
+#searchresult:focus
+{
+    outline: 3px solid whitesmoke;
+}
+
 th
 {
     background-color: #FFC248;
@@ -75,6 +91,7 @@ tr:hover
 
 .delete-button
 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
     padding: 10px 25px;
     background-color: rgb(255, 75, 75);
@@ -88,6 +105,7 @@ tr:hover
 
 .edit-button
 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
     padding: 10px 10px;
     background-color: rgb(0, 175, 255);

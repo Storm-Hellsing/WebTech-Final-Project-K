@@ -77,5 +77,8 @@
 <?php
 
     }
-
+    else
+    {
+        header('location: ../views/signIn.php');
+    }
 ?>

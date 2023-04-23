@@ -16,14 +16,14 @@
         
     <body>
         <div id="main-box">
-            <h1 align="center" id="header">User List</h1>
-            <a href="user_Admin_List.php" target="_blank" class="menu">Add Product</a>
+            <h1 align="center" id="header">Inventory</h1>
         </div>
 
         <div id="table-area">
             <div id="search">
                 <label for="searchresult">Search User: </label>
                 <input type="text" name="searchresult" id="searchresult" placeholder="Name/Type/Description/Date" value="" onkeyup="search()"/>
+                <a href="add_Product.php" class="menu">Add Product</a>
             </div>
             <?php
 
@@ -67,12 +67,12 @@
                     <td><?php echo $productData['product_description']; ?></td>
                     <td><?php echo $productData['added_date']; ?></td>
                     <td><?php echo $productData['added_time']; ?></td>
-                    <form method="GET" action="delete_User.php" enctype="">
-                        <input type="hidden" name="userid" id="userid" value="<?php echo $productData['product_id']; ?>"/>
+                    <form method="GET" action="delete_product.php" enctype="">
+                        <input type="hidden" name="productid" id="productid" value="<?php echo $productData['product_id']; ?>"/>
                         <td><button type="submit" name="delete" id="delete" class="delete-button">Delete</button></td>
                     </form>
                     <form method="GET" action="edit_User_Password.php" enctype="">
-                        <input type="hidden" name="userid" id="userid" value="<?php echo $productData['product_id']; ?>"/>
+                        <input type="hidden" name="productid" id="productid" value="<?php echo $productData['product_id']; ?>"/>
                         <td><button type="submit" name="edit" id="edit" class="edit-button">Edit</button></td>
                     </form>
                 </tr>

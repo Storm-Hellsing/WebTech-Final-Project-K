@@ -66,7 +66,7 @@
     }
     else
     {
-        header('location: ../views/user_all_List.php');
+        header('location: ../views/signIn.php');
     }
 
 ?>
