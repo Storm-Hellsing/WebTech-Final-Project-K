@@ -9,7 +9,7 @@
 
 <html>
     <head>
-        <title>User List</title>
+        <title>Inventory</title>
         <link rel="stylesheet" href="../assets/stylesheets/inventory_Stylesheet.css">
         <script src="../assets/scripts/inventory_Search_Script.js"></script>
     </head>
@@ -23,7 +23,7 @@
         <div id="table-area">
             <div id="search">
                 <label for="searchresult">Search User: </label>
-                <input type="text" name="searchresult" id="searchresult" placeholder="Name/Email/Mobile/Business" value="" onkeyup="search()"/>
+                <input type="text" name="searchresult" id="searchresult" placeholder="Name/Type/Description/Date" value="" onkeyup="search()"/>
             </div>
             <?php
 

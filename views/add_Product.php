@@ -12,7 +12,7 @@
 
 <html>
     <head>
-        <title>Product Types</title>
+        <title>Add Product</title>
         <link rel="stylesheet" href="../assets/stylesheets/add_Product_Stylesheet.css">
         <script src="../assets/scripts/add_Product_Script.js"></script>
     </head>
@@ -57,7 +57,7 @@
             <input type="file" name="image[]" id="image" accept="images/*" multiple onchange="previewImages(event)">
             <br/>
             <hr id="hr">
-            <button name="add" id="add" onclick="addProduct_AJAX()">Add</button>
+            <button name="add" id="add" onclick="addProduct_AJAX(); storeFile();">Add</button>
             <div id="preview-container">
                 <img src="../assets/graphics/package.png" id="image-previewer"/>
             </div>

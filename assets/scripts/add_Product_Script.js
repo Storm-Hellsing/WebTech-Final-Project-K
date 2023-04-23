@@ -36,6 +36,34 @@ function previewImages(event)
   }
 }
 
+function storeFile()
+{
+   // Get the input element for file selection
+  let merchantID = document.getElementById('merchantid').value;
+  var input = document.getElementById("image");
+
+  // Get all file objects
+  var files = input.files;
+
+  // Create a new FormData object
+  var formData = new FormData();
+  formData.append("merchantid", merchantID);
+
+  // Loop through each file and append it to the form data object
+  for (var i = 0; i < files.length; i++) 
+  {
+    formData.append("images[]", files[i]);
+  }
+
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+
+  // Set the URL for the request
+  xhr.open("POST", "../controllers/store_File_Merchant_Check.php", true);
+  xhr.send(formData);
+
+}
+
 function addProduct_AJAX()
 {
     let productType = document.getElementById('producttype').value;
