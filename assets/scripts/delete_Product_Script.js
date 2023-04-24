@@ -20,7 +20,7 @@ function delete_AJAX()
             setTimeout(function()
             {
                 window.location.replace("../views/inventory.php");
-            }, 4000);
+            }, 1000);
         }
     }
 }

@@ -99,4 +99,23 @@
         $sql = "DELETE FROM `product_all` WHERE `product_id` = '{$productID}'";
         return mysqli_query($connected, $sql);
     }
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------
+
+    #edit Operations
+    function edit_operation_Product($productID, $merchantID, $productType, $productName, $productPrice, $productQuantity, $productDescription)
+    {
+        $connected = setConnection();
+        $sql = "UPDATE `product_all` 
+                SET `product_type`= '{$productType}',
+                    `product_name`= '{$productName}',
+                    `product_price`='{$productPrice}',
+                    `product_quantity`='{$productQuantity}',
+                    `product_description`='{$productDescription}'
+                WHERE `product_id`='{$productID}' AND `merchant_id`='{$merchantID}'";
+
+        return mysqli_query($connected, $sql);
+    }
 ?>

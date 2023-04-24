@@ -45,7 +45,7 @@ function edit_AJAX()
                 setTimeout(function()
                 {
                     window.location.href = "../views/user_all_List.php";
-                }, 4000);
+                }, 1000);
             }
             else
             {

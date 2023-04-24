@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                 </table>
-                <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productData['product_name']); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image">
+                <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productID); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image">
                 <hr>
 
                 <div id="delete-button">

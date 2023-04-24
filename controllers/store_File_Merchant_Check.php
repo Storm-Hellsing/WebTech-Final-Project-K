@@ -1,10 +1,10 @@
 <?php
 
-if(isset($_REQUEST['merchantid']) && isset($_FILES['images']) && isset($_REQUEST['produtname']))
+if(isset($_REQUEST['merchantid']) && isset($_FILES['images']) && isset($_REQUEST['productid']))
 {
+    $productID = $_REQUEST['productid'];
     $merchantID = $_REQUEST['merchantid'];
-    $productName = $_REQUEST['produtname'];
-    $dir = "../assets/server_uploads/merchant_uploads/{$merchantID}/products/{$productName}/";
+    $dir = "../assets/server_uploads/merchant_uploads/{$merchantID}/products/{$productID}/";
 
     if(file_exists($dir) == false)
     {

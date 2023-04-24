@@ -146,29 +146,28 @@ img
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 25px;
     padding: 5px 20px;
     position: fixed;
-    left: 75%;
-    top: 0%;
-    transform: translateX(-50%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 5px;
-    animation: slideTop 3s ease-in-out forwards;
+    animation: slideBottom 1s ease-in-out forwards;
 }
 
-@keyframes slideTop 
+@keyframes slideBottom 
 {
     0% 
     {
-        transform: translateY(-100px);
+        transform: translate(-50%, 550%);
     }
     50% 
     {
-        transform: translateY(15%);
+        transform: translate(-50%, -75%);
     }
     100% 
     {
-        transform: translateY(5%);
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -177,4 +176,5 @@ img
     color: #FFC248;
     font-size: 16px;
     text-align: center;
+    font-weight: bold;
 }

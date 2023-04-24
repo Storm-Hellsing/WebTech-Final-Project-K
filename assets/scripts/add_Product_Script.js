@@ -39,6 +39,7 @@ function previewImages(event)
 function storeFile()
 {
    // Get the input element for file selection
+  let productID = document.getElementById('productid').value;
   let merchantID = document.getElementById('merchantid').value;
   let productName = document.getElementById('produtname').value;
   var input = document.getElementById("image");
@@ -48,8 +49,8 @@ function storeFile()
 
   // Create a new FormData object
   var formData = new FormData();
+  formData.append("productid", productID);
   formData.append("merchantid", merchantID);
-  formData.append("produtname", productName);
 
   // Loop through each file and append it to the form data object
   for (var i = 0; i < files.length; i++) 
@@ -68,6 +69,7 @@ function storeFile()
 
 function addProduct_AJAX()
 {
+    let productID = document.getElementById('productid').value;
     let productType = document.getElementById('producttype').value;
     let merchantID = document.getElementById('merchantid').value;
     let productName = document.getElementById('produtname').value;
@@ -90,6 +92,7 @@ function addProduct_AJAX()
 
     let data = {
 
+                'productid':productID,
                 'producttype':productType, 
                 'merchantid':merchantID,
                 'produtname':productName, 

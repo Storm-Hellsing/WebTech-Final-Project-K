@@ -6,8 +6,9 @@
     {
 
         require_once("../models/product_type_model.php");
+        require_once("../models/validations.php");
         $merchantID = $_COOKIE['userLoggedIn'];
-
+        $productID = setProductCode();
 ?>
 
 <html>
@@ -19,6 +20,7 @@
 
     <body>
         <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>"/>
+        <input type="hidden" name="productid" id="productid" value="<?php echo($productID); ?>"/>
         <div id="main-box">
         <h1 id="header">Add Product</h1>
         <a href="inventory.php" id="link-product-list">Inventory</a>

@@ -92,14 +92,12 @@ hr
     font-size: 18px;
     font-weight: bold;
     padding: 5px 20px;
-    width: 250px;
-    height: 50px;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    animation: slideBottom 3s ease-in-out forwards;
+    animation: slideBottom 1s ease-in-out forwards;
 }
 
 @keyframes slideBottom 
@@ -123,6 +121,7 @@ hr
     color: #FFC248;
     font-size: 16px;
     text-align: center;
+    font-weight: bold;
 }
 
 #product-image

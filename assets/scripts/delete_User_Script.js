@@ -19,8 +19,8 @@ function delete_AJAX()
 
             setTimeout(function()
             {
-                window.location.href = "../views/user_all_List.php";
-            }, 4000);
+                window.location.replace("../views/user_all_List.php");
+            }, 1000);
         }
     }
 }

@@ -10,6 +10,7 @@
         $productData = $_REQUEST['productData'];
         $credentials = json_decode($productData);
 
+        $productID = $credentials->productid;
         $productType = $credentials->producttype;
         $merchantID = $credentials->merchantid;
         $productName = $credentials->produtname;
@@ -31,7 +32,7 @@
         }
         else
         {
-            $productID = setProductCode();
+            
             $product_added = insert_product_all($productID, $merchantID, $productType, $productName, $productPrice, $productQuantity, $productDescription);
             $imaged_added = insert_product_img($productID, isset($imageNames[0]) ? $imageNames[0]:"Not Provided", 
                             isset($imageNames[1]) ? $imageNames[1]:"Not Provided", 

@@ -19,10 +19,12 @@
     <head>
         <title>Edit Product</title>
         <link rel="stylesheet" href="../assets/stylesheets/edit_Product_Stylesheet.css">
+        <script src="../assets/scripts/edit_Product_Script.js"></script>
     </head>
 
     <body>
         <input type="hidden" name="productid" id="productid" value="<?php echo($productID); ?>"/>
+        <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>"/>
         <div id="main-box">
         <h1 id="header">Edit Product</h1>
         <a href="inventory.php" id="link-product-list">Inventory</a>
@@ -60,9 +62,9 @@
             <br/>
             <br/>
             <hr id="hr">
-            <button name="edit" id="edit" onclick="">Edit</button>
+            <button name="edit" id="edit" onclick="editProduct_AJAX()">Edit</button>
             <div id="preview-container">
-                <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productData['product_name']); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image-previewer"/>
+                <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productID); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image-previewer"/>
             </div>
         </div>
 
