@@ -5,6 +5,8 @@
     if(isset($_COOKIE['userLoggedIn']))
     {
 
+        $merchantID = $_COOKIE['userLoggedIn'];
+
 ?>
 
 <html>
@@ -27,7 +29,7 @@
             </div>
             <?php
 
-                $found = find_product_all_general();
+                $found = find_product_by_merchant_id($merchantID);
 
                 if($found > 0)
                 {
@@ -51,7 +53,7 @@
                 <?php
                     
                     $count = 1;
-                    $fetched_Data = fetch_product_all_general();
+                    $fetched_Data = fetch_product_by_merchant_id($merchantID);
                     
                     while($productData = mysqli_fetch_assoc($fetched_Data))
                     {
@@ -91,7 +93,7 @@
                 }
                 else
                 {
-                    echo("<b>The List is empty.</b>");
+                    echo("<p id='list-message'>Your Inventory is Empty. Add some products, NOW!<p>");
                 }
                 
             ?>

@@ -31,6 +31,15 @@
         return mysqli_num_rows($result);
     }
 
+    function find_product_by_merchant_id($merchantID)
+    {
+        $connected = setConnection();
+        $sql = "SELECT * FROM `product_all` WHERE `merchant_id`= '{$merchantID}' ORDER BY `product_name` ASC";
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_num_rows($result);
+    }
+
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -51,6 +60,14 @@
         $result = mysqli_query($connected, $sql); 
 
         return mysqli_fetch_assoc($result);
+    }
+
+    function fetch_product_by_merchant_id($merchantID)
+    {
+        $connected = setConnection();
+        $sql = "SELECT * FROM `product_all` WHERE `merchant_id`= '{$merchantID}' ORDER BY `product_name` ASC";
+
+        return mysqli_query($connected, $sql);
     }
 
 #-----------------------------------------------------------------------------------------------------------------------------

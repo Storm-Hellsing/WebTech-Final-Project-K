@@ -137,3 +137,10 @@ tr:hover
 {
     text-decoration: underline;
 }
+
+#list-message
+{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
