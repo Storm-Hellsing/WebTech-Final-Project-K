@@ -71,7 +71,7 @@
                         <input type="hidden" name="productid" id="productid" value="<?php echo $productData['product_id']; ?>"/>
                         <td><button type="submit" name="delete" id="delete" class="delete-button">Delete</button></td>
                     </form>
-                    <form method="GET" action="edit_User_Password.php" enctype="">
+                    <form method="GET" action="edit_Product.php" enctype="">
                         <input type="hidden" name="productid" id="productid" value="<?php echo $productData['product_id']; ?>"/>
                         <td><button type="submit" name="edit" id="edit" class="edit-button">Edit</button></td>
                     </form>

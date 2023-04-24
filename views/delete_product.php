@@ -6,7 +6,7 @@
 
     if(isset($_COOKIE['userLoggedIn']))
     {   
-        $mechantID = $_COOKIE['userLoggedIn'];
+        $merchantID = $_COOKIE['userLoggedIn'];
         $productID = $_REQUEST['productid'];
         $productData = fetch_product_by_product_id($productID);
         $prodcutIMG_Data = fetch_image_by_product_id($productID)
@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                 </table>
-                <img src="../assets/server_uploads/merchant_uploads/<?php echo($mechantID); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image">
+                <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productData['product_name']); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="image">
                 <hr>
 
                 <div id="delete-button">

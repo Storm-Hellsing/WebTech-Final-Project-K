@@ -40,6 +40,7 @@ function storeFile()
 {
    // Get the input element for file selection
   let merchantID = document.getElementById('merchantid').value;
+  let productName = document.getElementById('produtname').value;
   var input = document.getElementById("image");
 
   // Get all file objects
@@ -48,6 +49,7 @@ function storeFile()
   // Create a new FormData object
   var formData = new FormData();
   formData.append("merchantid", merchantID);
+  formData.append("produtname", productName);
 
   // Loop through each file and append it to the form data object
   for (var i = 0; i < files.length; i++) 
