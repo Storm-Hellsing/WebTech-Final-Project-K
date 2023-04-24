@@ -94,7 +94,7 @@ body
     border: 2px solid black;
 }
 
-#add
+#edit
 {
     text-decoration: none;
     background-color: rgb(25, 25, 25);
@@ -112,34 +112,9 @@ body
     cursor: pointer;
 }
 
-#add:hover
+#edit:hover
 {
     background-color: rgb(75, 75, 75);
-}
-
-#image::-webkit-file-upload-button
-{
-    text-decoration: none;
-    background-color: rgb(0, 145, 255);
-    color: rgb(25, 25, 25);
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
-    padding: 10px 15px;
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#image::-webkit-file-upload-button:hover
-{
-    background-color: rgb(80, 165, 255);
-}
-
-#image
-{
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #preview-container
@@ -155,16 +130,6 @@ body
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     border: 3px solid rgb(25, 25, 25);
     border-radius: 5px;
-}
-
-#image-previewer
-{
-    color: whitesmoke;
-    text-align: center;
-    position: fixed;
-    top: 53%;
-    left: 75.5%;
-    transform: translate(-50%, -50%);
 }
 
 img
