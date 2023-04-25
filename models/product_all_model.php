@@ -40,6 +40,15 @@
         return mysqli_num_rows($result);
     }
 
+    function find_product_by_productType($produtType)
+    {
+        $connected = setConnection();
+        $sql = "SELECT * FROM `product_all` WHERE `product_type`= '{$produtType}' ORDER BY `product_name` ASC";
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_num_rows($result);
+    }
+
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------

@@ -9,7 +9,7 @@
         $merchantID = $_COOKIE['userLoggedIn'];
         $productID = $_REQUEST['productid'];
         $productData = fetch_product_by_product_id($productID);
-        $prodcutIMG_Data = fetch_image_by_product_id($productID)
+        $prodcutIMG_Data = fetch_image_by_product_id($productID);
 ?>
 
 
