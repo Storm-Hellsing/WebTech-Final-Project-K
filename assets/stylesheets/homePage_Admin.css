@@ -10,9 +10,12 @@ body
     background-color: #FFC248;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     text-align: center;
-    border-radius: 5px;
-    height: 105px;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 10px;
+    z-index: 1;
 }
 
 .menu
@@ -34,4 +37,63 @@ body
     position: fixed;
     left: 80%;
     top: 25px;
+}
+
+.categories
+{   
+    background-color: #FFC248;
+    position: relative;
+    top: 27%;
+    font-size: 32px;
+    padding: 1px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container-box
+{
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+    padding: 25px 25px;
+    border-radius: 5px;
+    position: relative;
+    top: 25%;
+    overflow: auto;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.content-box
+{
+    background-color: #FFC248;
+    color: rgb(25, 25, 25);
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.content-box:hover
+{
+    background-color: #fcc860;
+    cursor: pointer;
+}
+
+#labels
+{
+    width: 150px;
+}
+
+.label
+{
+    margin-top: 10px;
+}
+
+#product-image
+{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
 }
