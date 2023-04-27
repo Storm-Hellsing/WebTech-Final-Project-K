@@ -19,7 +19,17 @@ function signup_AJAX()
 {
     let userEmail = document.getElementById('email').value;
     let userPassword = document.getElementById('password').value;
-    let keep_Me_Signed_In = document.getElementById('keep_me_signed_in').value;
+
+    let checkbox_Status = document.getElementById('keep_me_signed_in');
+
+    if(checkbox_Status.checked)
+    {
+        var keep_Me_Signed_In = document.getElementById('keep_me_signed_in').value = "on";
+    }
+    else
+    {
+        var keep_Me_Signed_In = document.getElementById('keep_me_signed_in').value = "off";
+    }
 
     let data = {'email':userEmail, 'password':userPassword, 'keep_me_signed_in':keep_Me_Signed_In};
     let credentials = JSON.stringify(data);

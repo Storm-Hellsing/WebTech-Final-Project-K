@@ -28,7 +28,7 @@
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
-            else
+            elseif($keep_Me_Signed_In == "off")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
@@ -44,7 +44,7 @@
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
-            else
+            elseif($keep_Me_Signed_In == "off")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
@@ -59,7 +59,7 @@
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 31536000, '/');
             }
-            else
+            elseif($keep_Me_Signed_In == "off")
             {
                 setcookie('userLoggedIn', $userData['user_id'], time() + 3600, '/');
             }
