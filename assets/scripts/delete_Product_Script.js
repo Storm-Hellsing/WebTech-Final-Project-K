@@ -1,8 +1,9 @@
-function delete_AJAX()
+function delete_Product_AJAX()
 {
     let productID = document.getElementById('productid').value;
+    let merhcantID = document.getElementById('merchantid').value;
 
-    let data = {'productid':productID};
+    let data = {'productid':productID, 'merchantid':merhcantID};
     let credentials = JSON.stringify(data);
 
     let xhttp = new XMLHttpRequest();
@@ -19,7 +20,7 @@ function delete_AJAX()
 
             setTimeout(function()
             {
-                window.location.replace("../views/inventory.php");
+                 window.location.replace("../views/inventory.php");
             }, 1000);
         }
     }

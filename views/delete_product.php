@@ -24,7 +24,8 @@
 
     <body>
         <div id="main-box">
-            <input type="hidden" name="productid" id="productid" value="<?php echo($productData['product_id']) ?>">
+            <input type="hidden" name="productid" id="productid" value="<?php echo($productData['product_id']); ?>">
+            <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>">
             <h1 id="header">Delete Product</h1>
                 <table id="table">
                     <tr>
@@ -57,7 +58,7 @@
                 <hr>
 
                 <div id="delete-button">
-                <button name="delete" id="delete" onclick="delete_AJAX()">Delete</button>
+                <button name="delete" id="delete" onclick="delete_Product_AJAX()">Delete</button>
                 </div>
 
                 <a href="inventory.php" id="view-inventory">Inventory</a>

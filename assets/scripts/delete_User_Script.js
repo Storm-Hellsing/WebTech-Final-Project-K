@@ -1,4 +1,4 @@
-function delete_AJAX()
+function delete_User_AJAX()
 {
     let userID = document.getElementById('userid').value;
 
