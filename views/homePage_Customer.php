@@ -18,6 +18,7 @@
     <head>
         <title>Home Merchant</title>
         <link rel="stylesheet" href="../assets/stylesheets/homePage_Customer.css">
+        <script src="../assets/scripts/homePage_Customer.js"></script>
     </head>
 
     <body>
@@ -50,8 +51,15 @@
             <div class="content-box">
                 <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productID); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="product-image">
                 <div id="labels">
+                <form method="GET" action="view_Product.php" enctype="multipart/form-data">
+                    <input type="hidden" name="productid" id="productid" value="<?php echo($productID); ?>">
+                    <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>">
                     <p class="label"><?php echo($productData['product_name']); ?></p>
                     <p class="label">Tk: <?php echo($productData['product_price']); ?></p>
+                    <div class="view-button">
+                    <button type="submit" name="view-product" id="view-product" class="view-product-button">View Product</button>
+                    </div>
+                </form>
                 </div>
             </div>
             <?php
@@ -81,8 +89,15 @@
             <div class="content-box">
                 <img src="../assets/server_uploads/merchant_uploads/<?php echo($merchantID); ?>/products/<?php echo($productID); ?>/<?php echo($prodcutIMG_Data['product_img_1']); ?>" id="product-image">
                 <div id="labels">
+                <form method="GET" action="view_Product.php" enctype="multipart/form-data">
+                    <input type="hidden" name="productid" id="productid" value="<?php echo($productID); ?>">
+                    <input type="hidden" name="merchantid" id="merchantid" value="<?php echo($merchantID); ?>">
                     <p class="label"><?php echo($productData['product_name']); ?></p>
                     <p class="label">Tk: <?php echo($productData['product_price']); ?></p>
+                    <div class="view-button">
+                    <button type="submit" name="view-product" id="view-product" class="view-product-button">View Product</button>
+                    </div>
+                </form>
                 </div>
             </div>
             <?php

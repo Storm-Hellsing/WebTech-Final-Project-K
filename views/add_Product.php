@@ -59,7 +59,7 @@
             <input type="file" name="image[]" id="image" accept="images/*" multiple onchange="previewImages(event)">
             <br/>
             <hr id="hr">
-            <button name="add" id="add" onclick="addProduct_AJAX(); storeFile();">Add</button>
+            <button name="add" id="add" onclick="addProduct_AJAX(); storeFile(); previewImages(event);">Add</button>
             <div id="preview-container">
                 <img src="../assets/graphics/package.png" id="image-previewer"/>
             </div>

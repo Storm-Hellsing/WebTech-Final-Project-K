@@ -78,7 +78,6 @@ body
 .content-box:hover
 {
     background-color: #fcc860;
-    cursor: pointer;
 }
 
 #labels
@@ -88,7 +87,11 @@ body
 
 .label
 {
-    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* number of lines to display */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #product-image
@@ -96,4 +99,28 @@ body
     width: 150px;
     height: 150px;
     border-radius: 5px;
+}
+
+.view-button
+{
+    text-align: center;
+}
+
+.view-product-button
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: rgb(0, 145, 255);
+    border-radius: 25px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+.view-product-button:hover
+{
+    background-color: rgb(25, 25, 25);
+    background-color: rgb(80, 165, 255);
 }
