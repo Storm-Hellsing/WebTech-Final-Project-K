@@ -1,0 +1,115 @@
+body
+{
+    background-image: url(../graphics/background-2.jpg);
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#main-box
+{
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px;
+    background-color: #FFC248;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border: 5px solid black;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input
+{
+    background-color: #252525;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: white;
+    width: 320px;
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: black;
+    padding: 10px 10px;
+}
+
+input:focus
+{
+    outline: 3px solid whitesmoke;
+}
+
+#button
+{
+    text-align: center;
+}
+
+#submit
+{
+   display: inline-block;
+}
+
+#note
+{
+    text-align: center;
+}
+
+#resetpassword
+{
+    background-color: rgb(0, 145, 255);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    outline: 3px solid black;
+    color: rgb(25, 25, 25);
+    padding: 5px 50px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#resetpassword:hover
+{
+    background-color: rgb(80, 165, 255);
+}
+
+#message-box.show
+{
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    position: fixed;
+    left: 70%;
+    top: 30%;
+    border-radius: 5px;
+    animation: slideTop 5s ease-in-out forwards;
+}
+
+@keyframes slideTop 
+{
+    0% 
+    {
+      transform: translateY(-500px);
+    }
+    50% 
+    {
+      transform: translateY(75px);
+    }
+    100% 
+    {
+      transform: translateY(50px);
+    }
+}
+
+#message-text
+{
+    color: #FFC248;
+    font-size: 16px;
+    font-weight: bold;
+}

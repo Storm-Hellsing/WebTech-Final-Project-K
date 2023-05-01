@@ -105,7 +105,7 @@
 
       function setOTP() 
       {
-        $characters = '0123456789';
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $code = '';
         
         // Loop 6 times to generate a 6-digit code

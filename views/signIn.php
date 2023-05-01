@@ -48,7 +48,7 @@
                     <button name="submit" id="button" onclick="signup_AJAX()">Sign In</button>
                 </div>
                 <div class="forgotpasswordbutton">
-                    <button type="submit" name="submit" id="button-forgotpass">Forgot Password?</button>
+                    <a href="forget_Password.php" name="submit" id="button-forgotpass">Forgot Password?</a>
                 </div>
             </div>
 

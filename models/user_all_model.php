@@ -51,6 +51,17 @@
         return mysqli_num_rows($result);
     }
 
+    function find_user_by_email($email)
+    {
+        #For Finding all in general
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_email` = '{$email}' ORDER BY user_name ASC";
+        $connected = setConnection();
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_num_rows($result);
+    }
+
     function find_Current_Password($userID, $currentPassword)
     {
         $connected = setConnection();
@@ -122,6 +133,17 @@
         #For getting user data
         $connected = setConnection();
         $sql = "SELECT * FROM `user_all` WHERE `user_id` = '{$userID}'";
+        $result = mysqli_query($connected, $sql);
+
+        return mysqli_fetch_assoc($result);
+
+    }
+
+    function fetch_Data_By_Email($email)
+    {
+        #For getting user data
+        $connected = setConnection();
+        $sql = "SELECT * FROM `user_all` WHERE `user_email` = '{$email}'";
         $result = mysqli_query($connected, $sql);
 
         return mysqli_fetch_assoc($result);
