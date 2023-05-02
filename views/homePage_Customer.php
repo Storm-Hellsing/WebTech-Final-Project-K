@@ -31,6 +31,17 @@
             <a href="signUp_Merchant.php" class="menu">Join as a Merchant</a>
             <a href="" target="_blank" class="menu">My profile</a>
         </div>
+
+        <div class="categories">
+            <p>Sales</p>
+        </div>
+        <div class="ad-box">
+            <div class="advertisement-box">
+                <img src="../assets/graphics/Advertisement-1.jpg" class="ad-image">
+                <img src="../assets/graphics/Advertisement-2.jpg" class="ad-image">
+                <img src="../assets/graphics/Advertisement-3.jpg" class="ad-image">
+            </div>
+        </div>
         
         <div class="categories">
             <p>Just for You</p>

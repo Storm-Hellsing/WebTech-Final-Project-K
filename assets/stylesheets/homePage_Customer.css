@@ -124,3 +124,39 @@ body
     background-color: rgb(25, 25, 25);
     background-color: rgb(80, 165, 255);
 }
+
+.ad-box
+{
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+    padding: 25px 25px;
+    border-radius: 5px;
+    position: relative;
+    top: 25%;
+    overflow: auto;
+    display: flex;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.advertisement-box
+{
+    background-color: #FFC248;
+    color: rgb(25, 25, 25);
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    left: 18%;
+}
+
+.ad-image
+{
+    width: 200px;
+    height: 250px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
