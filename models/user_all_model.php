@@ -229,4 +229,13 @@
         return mysqli_query($connected, $sql);
     }
 
+    function edit_opertation_Email($email, $userID)
+    {
+        $connected = setConnection();
+        $sql = "UPDATE `user_all` 
+                SET `user_email`='{$email}' 
+                WHERE `user_id` = '{$userID}'";
+        return mysqli_query($connected, $sql);
+    }
+
 ?>

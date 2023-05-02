@@ -1,0 +1,48 @@
+body
+{
+    background-image: url(../graphics/background-2.jpg);
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#main-box
+{
+    background-color: #FFC248;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    text-align: center;
+    font-weight: bold;
+    animation: slideBottom 3s ease-in-out forwards;
+}
+
+@keyframes slideBottom
+{
+    0% 
+    {
+        top: 300%
+    }
+    50% 
+    {
+        top: 25%
+    }
+    100% 
+    {
+        top: 50%;
+    }
+}
+
+#link
+{
+    text-decoration: none;
+    color: blue;
+}
+
+#link:hover
+{
+    text-decoration: underline;
+}

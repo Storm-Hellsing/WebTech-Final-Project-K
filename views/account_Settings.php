@@ -16,7 +16,7 @@
     <div id="main-box">
         <h1 id="header">Account Settings</h1>
         <p align="center"><a href="change_Password.php" class="links"> Change Password </a></p>
-        <p align="center"><a href="privacy_Policy.php" class="links"> Change Email </a></p>
+        <p align="center"><a href="change_Email.php" class="links"> Change Email </a></p>
     </div>
   </body>
 </html>
