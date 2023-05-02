@@ -22,11 +22,6 @@
                 <h2 id="companyname">Goods and Goodies</h2>
                 <h2>Force Change Password</h2>
                 <div class="form-box">
-                    <label for="currentpassword">Current Password:</label><br>
-                    <input type="password" name="currentpassword" id="currentpassword" value=""/>
-                    <br>
-                </div>
-                <div class="form-box">
                     <label for="password">Password:</label><br>
                     <input type="password" name="password" id="password" value=""/>
                     <br>
@@ -50,7 +45,6 @@
                 </div>
                 <div id="editbutton">
                     <button name="edit" id="button" onclick="edit_AJAX()">Edit</button>
-                    <a href="user_Admin_List.php" id="button">Cancel</a>
                 </div>
             </div>
 

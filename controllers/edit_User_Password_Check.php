@@ -10,25 +10,16 @@
         $credentials = json_decode($userData);
 
         $userID = $credentials->userid;
-        $currentPassword = $credentials->currentpassword;
         $newPassword = $credentials->password;
         $retypePassword = $credentials->retypepassword;
 
         #validations
         $validPassword = validatePassword($newPassword);
 
-        #sql Query
-        $found_Current_Password = find_Current_Password($userID, $currentPassword);
-
-        if($currentPassword == "" || $newPassword == "" || $retypePassword == "")
+        if($newPassword == "" || $retypePassword == "")
         {
             echo("Message:<br/><br/>
             Please Fill up all the fields.");
-        }
-        elseif($found_Current_Password < 1) 
-        {
-            echo("Message:<br/><br/>
-            Your current password seems to be wrong.");
         }
         elseif($validPassword == 0)
         {

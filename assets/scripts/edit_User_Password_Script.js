@@ -2,30 +2,26 @@ function togglePassword()
 {
     let passwordInput = document.getElementById("password");
     let retypepasswordInput = document.getElementById("retypepassword");
-    let currentpasswordInput = document.getElementById("currentpassword");
 
     if (passwordInput.type === "password" && retypepasswordInput.type === "password") 
     {
         passwordInput.type = "text";
         retypepasswordInput.type = "text";
-        currentpasswordInput.type = "text";
     } 
     else 
     {
         passwordInput.type = "password";
         retypepasswordInput.type = "password";
-        currentpasswordInput.type = "password";
     }
 }
 
 function edit_AJAX()
 {
     let userID = document.getElementById('userid').value;
-    let currentPassword = document.getElementById('currentpassword').value;
     let userPassword = document.getElementById('password').value;
     let retypePassword = document.getElementById('retypepassword').value;
 
-    let data = {'userid':userID, 'currentpassword':currentPassword, 'password':userPassword, 'retypepassword':retypePassword};
+    let data = {'userid':userID, 'password':userPassword, 'retypepassword':retypePassword};
     let credentials = JSON.stringify(data);
 
     let xhttp = new XMLHttpRequest();
