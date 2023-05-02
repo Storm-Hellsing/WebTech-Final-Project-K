@@ -27,7 +27,8 @@
             <h3 id="user-welcome">Welcome, <?php echo($userData['user_name']); ?></h3>
             <a href="" target="_blank" class="menu">My Orders</a>
             <a href="" target="_blank" class="menu">My Cart</a>
-            <a href="" target="_blank" class="menu">Settings</a>
+            <a href="settings.php" class="menu">Settings</a>
+            <a href="signUp_Merchant.php" class="menu">Join as a Merchant</a>
             <a href="" target="_blank" class="menu">My profile</a>
             <a href="logout.php" class="menu">Logout</a>
         </div>
