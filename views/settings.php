@@ -15,7 +15,7 @@
   <body>
     <div id="main-box">
         <h1 id="header">Settings</h1>
-        <p><a href="account_setting.php" class="links"> Account Setting </a></p>
+        <p><a href="account_Settings.php" class="links"> Account Setting </a></p>
         <p><a href="privacy_Policy.php" class="links"> Privacy Policy </a></p>
         <p><a href="terms_Conditions.php" class="links"> Terms & Conditions </a></p>
         <div id="button-container">

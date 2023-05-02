@@ -18,7 +18,7 @@ function togglePassword()
     }
 }
 
-function edit_AJAX()
+function change_AJAX()
 {
     let userID = document.getElementById('userid').value;
     let currentPassword = document.getElementById('currentpassword').value;
@@ -30,9 +30,9 @@ function edit_AJAX()
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open('post', '../controllers/edit_User_Password_Check.php', true);
+    xhttp.open('post', '../controllers/change_Password_Check.php', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('edit&userData='+credentials);
+    xhttp.send('change&userData='+credentials);
     xhttp.onreadystatechange = function()
     {
         if(this.readyState == 4 && this.status == 200)
@@ -44,7 +44,7 @@ function edit_AJAX()
 
                 setTimeout(function()
                 {
-                    window.location.replace("../views/user_all_List.php");
+                    window.location.replace("../views/account_Settings.php");
                 }, 1000);
             }
             else

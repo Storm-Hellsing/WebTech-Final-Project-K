@@ -29,7 +29,6 @@
             <a href="user_all_List.php" target="_blank" class="menu">View Users</a>
             <a href="settings.php" class="menu">Settings</a>
             <a href="" target="_blank" class="menu">My profile</a>
-            <a href="logout.php" class="menu">Logout</a>
         </div>
 
         <div class="categories">
