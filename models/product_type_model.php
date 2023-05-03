@@ -1,6 +1,7 @@
 <?php
 
     require_once("../models/db_connection.php");
+    require_once("../models/validations.php");
 
     #Find Product Type
     function find_product_type_general()

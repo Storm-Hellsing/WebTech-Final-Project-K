@@ -11,7 +11,7 @@
 #-----------------------------------------------------------------------------------------------------------------------------
 
     #Fetch Product Image
-    function fetch_image_by_product_id($productID)
+    function fetch_wish_list_by_wish_id($productID)
     {
         $connected = setConnection();
         $sql = "SELECT * FROM `product_image_all` WHERE `product_id`= '{$productID}'";
@@ -33,16 +33,13 @@
 #-----------------------------------------------------------------------------------------------------------------------------
 
     #insert Product Image
-    function insert_product_img($productID, $productIMG_1, $productIMG_2, $productIMG_3, $productIMG_4, $productIMG_5)
+    function insert_wish_list($userID, $productID, $merchantName, $productName, $productPrice, $productDescription)
     {
-        date_default_timezone_set('Asia/Dhaka');
-        $date = date("Y-m-d");
-        $time = date("H:i:s");
 
-        $imgID = setProductIMGCode();
+        $wishID = setWishID();
         $connected = setConnection();
-        $sql = "INSERT INTO `product_image_all`(`img_id`, `product_id`, `product_img_1`, `product_img_2`, `product_img_3`, `product_img_4`, `product_img_5`, `add_date`, `add_time`) 
-        VALUES ('{$imgID}','{$productID}','{$productIMG_1}','{$productIMG_2}','{$productIMG_3}','{$productIMG_4}','{$productIMG_5}','{$date}','{$time}')";
+        $sql = "INSERT INTO `wish_list_all`(`wish_list_id`, `user_id`, `product_id`, `merchant_name`, `product_name`, `product_price`, `product_description`) 
+        VALUES ('{$wishID}','{$userID}','{$productID}','{$merchantName}','{$productName}','{$productPrice}','{$productDescription}')";
 
         return mysqli_query($connected, $sql);
     }

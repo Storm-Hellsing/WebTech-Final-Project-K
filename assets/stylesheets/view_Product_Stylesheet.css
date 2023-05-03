@@ -101,11 +101,62 @@ img
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     position: relative;
-    top: 2%;
-    left: 13%;
+    top: 15%;
+    left: 10%;
     padding: 15px 35px;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#addtowishlist
+{
+    position: relative;
+    left: 20%;
+}
+
+#img_reaction
+{
+    width: 25px;
+}
+
+#message-box.show
+{
+    background-color: rgb(25, 25, 25);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 5px 20px;
+    position: fixed;
+    left: 75%;
+    top: 0%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    animation: slideTop 3s ease-in-out forwards;
+}
+
+@keyframes slideTop 
+{
+    0% 
+    {
+        transform: translateY(-100px);
+    }
+    50% 
+    {
+        transform: translateY(15%);
+    }
+    100% 
+    {
+        transform: translateY(5%);
+    }
+}
+
+#message-text
+{
+    color: #FFC248;
+    font-size: 16px;
+    text-align: center;
 }
