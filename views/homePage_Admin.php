@@ -4,6 +4,7 @@
     require_once("../models/user_all_model.php");
     require_once("../models/product_all_model.php");
     require_once("../models/product_image_all.php");
+    require_once("../models/user_image_all_model.php");
 
     if(isset($_COOKIE['userLoggedIn']))
     {
@@ -11,6 +12,7 @@
 
         $userData = fetch_Data_ByID($userID);
         $found = find_product_all_general();
+        $imgData = fetch_image_by_user_id($userID);
 ?>
 
 <html>
@@ -23,12 +25,38 @@
         <div class="main-box">
             <h1>Goods and Goodies</h1> <br/>
             <h3 id="user-welcome">Welcome, <?php echo($userData['user_name']); ?></h3>
+            <div id="preview-container">
+          <?php
+
+            if($imgData && file_exists("../assets/server_uploads/user_uploads/profile/".$userID."/".$imgData['img_name']))
+            {
+              
+
+          ?>
+          
+            <img src="../assets/server_uploads/user_uploads/profile/<?php echo($userID); ?>/<?php echo($imgData['img_name']); ?>" id="pro-image"/>
+
+          <?php
+
+            }
+            else
+            {
+
+          ?>   
+
+            <img src="../assets/graphics/user_icon.png" id="pro-image"/>
+
+          <?php
+
+            }
+
+          ?>   
+          </div>
             <a href="operations.php" target="_blank" class="menu">Operations</a>
             <a href="" target="_blank" class="menu">My Orders</a>
             <a href="" target="_blank" class="menu">My Cart</a>
             <a href="user_all_List.php" target="_blank" class="menu">View Users</a>
             <a href="settings.php" class="menu">Settings</a>
-            <a href="" target="_blank" class="menu">My profile</a>
         </div>
 
         <div class="categories">

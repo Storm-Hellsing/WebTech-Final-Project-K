@@ -20,13 +20,13 @@
         return mysqli_fetch_assoc($result);
     }
 
-    function fetch_image_by_General($productID)
-    {
-        $connected = setConnection();
-        $sql = "SELECT * FROM `user_image_all` WHERE `user_id`= '{$userID}'";
+    // function fetch_image_by_General($productID)
+    // {
+    //     $connected = setConnection();
+    //     $sql = "SELECT * FROM `user_image_all` WHERE `user_id`= '{$userID}'";
         
-        return mysqli_query($connected, $sql); 
-    }
+    //     return mysqli_query($connected, $sql); 
+    // }
 
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
