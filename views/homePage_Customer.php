@@ -58,6 +58,7 @@
             <a href="" target="_blank" class="menu">My Cart</a>
             <a href="settings.php" class="menu">Settings</a>
             <a href="signUp_Merchant.php" class="menu">Join as a Merchant</a>
+            <a href="view_Wish_List.php" class="menu">Wish List</a>
         </div>
 
         <div class="categories">

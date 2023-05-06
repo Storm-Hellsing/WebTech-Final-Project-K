@@ -4,6 +4,14 @@
     require_once("../models/validations.php");
 
     #Find Product Image
+    function find_wish_list_by_user_id($userID)
+    {
+        $connected = setConnection();
+        $sql = "SELECT * FROM `wish_list_all` WHERE `user_id` = '{$userID}'";
+        $result = mysqli_query($connected, $sql); 
+
+        return mysqli_num_rows($result);
+    }
   
 
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -20,10 +28,10 @@
         return mysqli_fetch_assoc($result);
     }
 
-    function fetch_image_by_General($productID)
+    function fetch_wish_list_by_user_id($userID)
     {
         $connected = setConnection();
-        $sql = "SELECT * FROM `product_image_all` WHERE `product_id`= '{$productID}'";
+        $sql = "SELECT * FROM `wish_list_all` WHERE `user_id` = '{$userID}'";
         
         return mysqli_query($connected, $sql); 
     }
